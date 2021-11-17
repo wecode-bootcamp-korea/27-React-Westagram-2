@@ -10,16 +10,16 @@ const Comment = ({ comment }) => {
     <div className="comment">
       <label>
         {' '}
-        <a className="user-name" href="#">
+        <a className="userName" href="#">
           {comment.userId}
         </a>
         &nbsp;<span>{comment.contents}</span>{' '}
       </label>
       <label>
-        <button className="comment-like-button">
+        <button className="commentLikeButton">
           <FontAwesomeIcon icon={faHeart} />
         </button>
-        <button className="comment-delete-button">
+        <button className="commentDeleteButton">
           <FontAwesomeIcon icon={faTrash} />
         </button>
       </label>

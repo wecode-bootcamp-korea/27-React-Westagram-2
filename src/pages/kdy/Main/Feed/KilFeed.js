@@ -46,71 +46,71 @@ const KilFeed = () => {
 
   return (
     <article id="feed-0" className="feed">
-      <div className="feed-header">
-        <div className="feed-writer">
-          <div className="small-profile-circle">
+      <div className="feedHeader">
+        <div className="feedWriter">
+          <div className="smallProfileCircle">
             <img
-              alt="feed-profile-img"
-              className="small-profile-img"
+              alt="feedProfileImg"
+              className="smallProfileImg"
               src="images/kdy/ralo.jpeg"
             />
           </div>
-          <div className="writer-info">
-            <a className="user-name" href="#">
+          <div className="writerInfo">
+            <a className="userName" href="#">
               ralo
             </a>
-            <a className="location-info" href="#">
+            <a className="locationInfo" href="#">
               김해시
             </a>
           </div>
         </div>
-        <div className="feed-menu">
+        <div className="feedMenu">
           <FontAwesomeIcon icon={faEllipsisH} />
         </div>
       </div>
-      <div className="feed-image">
+      <div className="feedImage">
         <img
           alt="feed-image"
           src="images/kdy/olcay-ertem-m4R-7ZsENNE-unsplash.jpg"
         />
       </div>
-      <div className="feed-body">
-        <div className="button-wrapper">
-          <div className="button-container">
-            <button className="button-like" onclick="feedLikeToggle(this)">
+      <div className="feedBody">
+        <div className="buttonWrapper">
+          <div className="buttonContainer">
+            <button className="buttonLike" onclick="feedLikeToggle(this)">
               <FontAwesomeIcon icon={faHeart} />
             </button>
-            <button className="button-comment">
+            <button className="buttonComment">
               <FontAwesomeIcon icon={faComment} />
             </button>
-            <button className="button-share">
+            <button className="buttonShare">
               <FontAwesomeIcon icon={faPaperPlane} />
             </button>
           </div>
-          <div className="button-container">
-            <button className="button-bookmark">
+          <div className="buttonContainer">
+            <button className="buttonBookmark">
               <FontAwesomeIcon icon={faBookmark} />
               <i className="far fa-bookmark"></i>
             </button>
           </div>
         </div>
-        <div className="feed-content">
+        <div className="feedContent">
           <p>
-            <a className="user-name" href="#">
+            <a className="userName" href="#">
               paka9999
             </a>
             님 외{' '}
-            <a className="user-name" href="#">
+            <a className="userName" href="#">
               7명
             </a>
             이 좋아합니다
           </p>
-          <div className="feed-comments">
+          <div className="feedComments">
             <div className="comments">
-              <div className="comment main-comment">
+              <div className="comment mainComment">
                 <label>
                   {' '}
-                  <a className="user-name" href="#">
+                  <a className="userName" href="#">
                     ralo
                   </a>
                   &nbsp;<span>ㅇㅇ</span>{' '}
@@ -119,7 +119,7 @@ const KilFeed = () => {
               <div id="comment-0" className="comment">
                 <label>
                   {' '}
-                  <a className="user-name" href="#">
+                  <a className="userName" href="#">
                     um_stil_alive
                   </a>
                   &nbsp;<span>ㅇㅇ</span>{' '}
@@ -127,19 +127,19 @@ const KilFeed = () => {
               </div>
               <Comments commentList={commentList} />
             </div>
-            <div className="feed-time-ago">
+            <div className="feedTimeAgo">
               <p>2시간 전</p>
             </div>
           </div>
         </div>
-        <form className="comment-input-container">
+        <form className="commentInputContainer">
           <input
-            name="comment-input"
-            className="comment-input"
+            name="commentInput"
+            className="commentInput"
             placeholder="댓글 달기..."
             onChange={commentInputChange}
           />
-          <button className="comment-input-button" onClick={commentCreate}>
+          <button className="commentInputButton" onClick={commentCreate}>
             게시
           </button>
         </form>

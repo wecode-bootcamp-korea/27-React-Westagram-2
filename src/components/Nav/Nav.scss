@@ -7,7 +7,7 @@ header {
   top: 0;
 
   width: 100%;
-  
+
   nav {
     position: sticky;
     position: -webkit-sticky;
@@ -64,7 +64,7 @@ header {
           border-radius: 4px;
         }
 
-        input:focus ~ .nav-icon {
+        input:focus ~ .navIcon {
           display: none;
         }
 
@@ -74,8 +74,8 @@ header {
 
         .navIcon {
           position: absolute;
-          top: 5px;
-          left: 7px;
+          top: 6px;
+          left: 40px;
 
           color: #dbdbdb;
         }

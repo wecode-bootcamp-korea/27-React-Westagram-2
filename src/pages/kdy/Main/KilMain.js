@@ -8,8 +8,8 @@ const KilMain = () => {
     <>
       <Nav />
       <main>
-        <section className="main-section">
-          <section className="feeds-wrapper">
+        <section className="mainSection">
+          <section className="feedsWrapper">
             <KilFeed />
           </section>
         </section>

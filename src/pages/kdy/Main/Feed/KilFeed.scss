@@ -6,7 +6,7 @@
   border: 1px solid rgb(214, 214, 214);
   border-radius: 1px;
 
-  .feed-header {
+  .feedHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,14 +16,14 @@
 
     border-bottom: 1px solid rgb(214, 214, 214);
 
-    .feed-writer {
+    .feedWriter {
       display: flex;
     }
 
-    .writer-info {
+    .writerInfo {
       margin-left: 10px;
 
-      .location-info {
+      .locationInfo {
         display: block;
 
         color: #262626;
@@ -32,31 +32,31 @@
       }
     }
   }
-  .feed-image {
+  .feedImage {
     img {
       width: 614px;
       max-height: 614px;
     }
   }
 
-  .feed-body {
+  .feedBody {
     display: flex;
     flex-direction: column;
 
-    .button-wrapper {
+    .buttonWrapper {
       display: flex;
       justify-content: space-between;
 
       width: 100%;
 
-      .button-container {
+      .buttonContainer {
         display: flex;
 
         margin: 10px;
       }
     }
 
-    .feed-content {
+    .feedContent {
       display: flex;
       flex-direction: column;
       padding: 0 16px;
@@ -68,7 +68,7 @@
         display: inline;
       }
 
-      .feed-comments {
+      .feedComments {
         margin-top: 8px;
 
         .comment {
@@ -76,38 +76,10 @@
           justify-content: space-between;
 
           margin-bottom: 0px;
-
-          .comment-like-button {
-            height: 12px;
-
-            border: none;
-            background-color: transparent;
-
-            font-size: 12px;
-          }
-
-          .comment-like-button.liked {
-            height: 12px;
-
-            border: none;
-            background-color: transparent;
-
-            font-size: 12px;
-            color: red;
-          }
-
-          .comment-delete-button {
-            height: 12px;
-
-            border: none;
-            background-color: transparent;
-
-            font-size: 12px;
-          }
         }
       }
 
-      .feed-time-ago {
+      .feedTimeAgo {
         margin-top: 5px;
         margin-bottom: 16px;
 
@@ -116,7 +88,7 @@
       }
     }
   }
-  .comment-input-container {
+  .commentInputContainer {
     display: flex;
 
     height: 40px;
@@ -124,7 +96,7 @@
 
     border-top: 1px solid rgb(214, 214, 214);
 
-    .comment-input {
+    .commentInput {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -138,7 +110,7 @@
       font-size: 14px;
     }
 
-    .comment-input-button {
+    .commentInputButton {
       width: 30px;
       padding: 0;
       margin-left: 6px;
@@ -150,7 +122,7 @@
       color: #0095f6;
     }
 
-    .comment-input-button:disabled {
+    .commentInputButton:disabled {
       border: none;
       background-color: transparent;
 
@@ -159,7 +131,7 @@
   }
 }
 
-.button-like {
+.buttonLike {
   width: 40px;
   height: 40px;
 
@@ -169,7 +141,7 @@
   font-size: 24px;
 }
 
-.button-like.liked {
+.buttonLike.liked {
   width: 40px;
   height: 40px;
 
@@ -180,7 +152,7 @@
   font-size: 24px;
 }
 
-.button-comment {
+.buttonComment {
   width: 40px;
   height: 40px;
 
@@ -190,7 +162,7 @@
   font-size: 24px;
 }
 
-.button-share {
+.buttonShare {
   width: 40px;
   height: 40px;
 
@@ -200,7 +172,7 @@
   font-size: 24px;
 }
 
-.button-bookmark {
+.buttonBookmark {
   width: 40px;
   height: 40px;
 

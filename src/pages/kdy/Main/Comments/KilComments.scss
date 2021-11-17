@@ -4,31 +4,31 @@
 
   margin-bottom: 0px;
 
-  .comment-like-button {
-    height: 12px;
+  .commentLikeButton {
+    margin-left: 16px;
 
     border: none;
     background-color: transparent;
 
-    font-size: 12px;
+    font-size: 14px;
   }
 
-  .comment-like-button.liked {
-    height: 12px;
+  .commentLikeButton.liked {
+    margin-left: 16px;
 
     border: none;
     background-color: transparent;
 
-    font-size: 12px;
+    font-size: 14px;
     color: red;
   }
 
-  .comment-delete-button {
-    height: 12px;
+  .commentDeleteButton {
+    margin-left: 16px;
 
     border: none;
     background-color: transparent;
 
-    font-size: 12px;
+    font-size: 14px;
   }
 }

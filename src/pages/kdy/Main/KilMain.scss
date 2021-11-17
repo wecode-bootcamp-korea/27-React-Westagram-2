@@ -16,19 +16,19 @@ main {
   background-color: rgb(249, 249, 249);
 }
 
-.main-section {
+.mainSection {
   display: flex;
   justify-content: center;
 
   padding-top: 30px;
 
-  .feeds-wrapper {
+  .feedsWrapper {
     display: flex;
     flex-direction: column;
   }
 
   @media screen and (min-width: 960px) {
-    .feeds-wrapper {
+    .feedsWrapper {
       display: flex;
       flex-direction: column;
 
@@ -37,7 +37,7 @@ main {
   }
 }
 
-.small-profile-circle {
+.smallProfileCircle {
   width: 42px;
   height: 42px;
   border: 2px solid transparent;
@@ -48,14 +48,14 @@ main {
   background-clip: content-box, border-box;
 }
 
-.small-profile-img {
+.smallProfileImg {
   width: 38px;
   height: 38px;
   border: 2px solid transparent;
   border-radius: 70%;
 }
 
-.profile-circle {
+.profileCircle {
   width: 60px;
   height: 60px;
   border: 2px solid transparent;
@@ -66,14 +66,14 @@ main {
   background-clip: content-box, border-box;
 }
 
-.profile-img {
+.profileImg {
   width: 56px;
   height: 56px;
   border: 2px solid transparent;
   border-radius: 70%;
 }
 
-.user-name {
+.userName {
   display: block;
   text-decoration-line: none;
   font-weight: bold;
@@ -84,7 +84,7 @@ main {
   margin-bottom: 3px;
 }
 
-.user-id {
+.userId {
   display: block;
   text-decoration-line: none;
   font-weight: bold;
