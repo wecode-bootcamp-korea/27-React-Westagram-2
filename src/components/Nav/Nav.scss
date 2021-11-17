@@ -1,0 +1,104 @@
+$border-line: 1px solid #dbdbdb;
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  
+  nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+
+    width: 100%;
+    padding: 5px 50px;
+
+    background-color: white;
+    border-bottom: $border-line;
+
+    z-index: 3;
+
+    h1 {
+      margin-top: 3px;
+      padding-left: 45px;
+
+      font-family: 'Lobster', cursive;
+      font-size: 25px;
+    }
+    span {
+      position: absolute;
+      top: 6px;
+      left: 0;
+
+      padding-right: 10px;
+
+      border-right: $border-line;
+
+      font-size: 25px;
+    }
+
+    .navContainer {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      max-width: 935px;
+      margin: 4px auto;
+
+      .navInput {
+        position: relative;
+
+        height: 100%;
+
+        input {
+          padding: 5px;
+          height: 100%;
+
+          background-color: rgb(249, 249, 249);
+          border: $border-line;
+          border-radius: 4px;
+        }
+
+        input:focus ~ .nav-icon {
+          display: none;
+        }
+
+        input::-webkit-input-placeholder {
+          text-align: center;
+        }
+
+        .navIcon {
+          position: absolute;
+          top: 5px;
+          left: 7px;
+
+          color: #dbdbdb;
+        }
+      }
+    }
+
+    .navLogo {
+      display: flex;
+      justify-content: center;
+
+      margin-top: -3px;
+    }
+
+    .menuIconWrapper {
+      display: flex;
+      justify-content: space-between;
+
+      height: 100%;
+
+      img {
+        width: 45px;
+        padding-left: 22px;
+      }
+    }
+  }
+}

@@ -1,7 +1,8 @@
 import React from 'react';
+import Nav from '../../../components/Nav/Nav';
 
 const KilMain = () => {
-  return <div>hi</div>;
+  return <Nav />;
 };
 
 export default KilMain;
