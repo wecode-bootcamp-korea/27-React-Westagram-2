@@ -1,18 +1,19 @@
-@import './Variables.scss';
-@import url(“https://fonts.googleapis.com/css2?family=Lobster&display=swap”);
+@import './variables.scss';
 
-body{
-   @include theme;
+body {
+  @include theme;
 }
-input{
-  @include border-default;
+
+input {
+  @include borderDefault;
   border-radius: 4px;
   outline: none;
 }
-img{
+
+img {
   width: 100%;
 }
-button{
+
+button {
   cursor: pointer;
 }
-
