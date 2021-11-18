@@ -1,0 +1,88 @@
+@import '../../../styles/variables.scss';
+
+.mainRight {
+  width: 40%;
+
+  > span {
+    @include flexStart;
+    width: 100%;
+    margin-top: 8px;
+
+    .user {
+      width: 56px;
+      height: 56px;
+      margin-right: 15px;
+      background: #000;
+      border-radius: 50px;
+    }
+
+    .userId {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  > div {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+  }
+
+  .feedStory {
+    height: 300px;
+    padding: 14px;
+
+    .feedStoryHead {
+      @include flexSpaceBetweenCenter;
+      font-size: 14px;
+
+      .story {
+        color: #8e8e8e;
+      }
+    }
+
+    .feedStoryCon {
+      margin-top: 14px;
+
+      ul {
+        overflow-y: auto;
+
+        li {
+          display: flex;
+          margin-bottom: 15px;
+
+          .feedStoryConUser {
+            width: 32px;
+            height: 32px;
+            margin-right: 13px;
+            background: #000;
+            border-radius: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .recommend {
+    height: 200px;
+
+    .feedStoryCon {
+      ul {
+        li {
+          @include flexSpaceBetweenCenter;
+          margin-bottom: 15px;
+
+          .feedStoryUserInfo {
+            @include flexStart;
+          }
+
+          .follow {
+            color: #0095f6;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import '../../../styles/variables.scss';
+
+body {
+  background: #fafafa;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+.login {
+  @include flexCenter;
+  width: 100%;
+  max-width: 935px;
+  margin: 30px auto;
+  padding-bottom: 32px;
+  background: #fafafa;
+
+  .wrapper {
+    min-width: 350px;
+    padding-bottom: 20px;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+
+    h1 {
+      width: 175px;
+      height: 51px;
+      margin: 22px auto 12px;
+      font-size: 38px;
+      font-weight: bold;
+    }
+
+    form {
+      margin: 24px 40px;
+    }
+
+    .findWrapper {
+      padding-top: 50px;
+      text-align: center;
+
+      a {
+        color: #335b85;
+      }
+    }
+  }
+}
