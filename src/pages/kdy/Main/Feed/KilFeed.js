@@ -13,13 +13,7 @@ import Comments from '../Comments/KilComments';
 
 const KilFeed = () => {
   const [commentInput, setCommentInput] = useState('');
-  const [commentList, setCommentList] = useState([
-    {
-      commentNo: 0,
-      userId: 'ralo',
-      contents: '낭만이 있는 김해',
-    },
-  ]);
+  const [commentList, setCommentList] = useState([]);
 
   const commentInputChange = e => {
     setCommentInput(e.target.value);
@@ -35,6 +29,7 @@ const KilFeed = () => {
       {
         commentNo: nextCommentNo.current,
         userId: 'ralo',
+        liked: false,
         contents: commentInput,
       },
     ]);
@@ -42,6 +37,21 @@ const KilFeed = () => {
     setCommentInput('');
 
     nextCommentNo.current += 1;
+  };
+
+  const commentLiked = commentNo => {
+    const temp = commentList.map(comment =>
+      comment.commentNo === commentNo
+        ? { ...comment, liked: !comment.liked }
+        : comment
+    );
+    setCommentList(temp);
+    console.log(commentList);
+  };
+
+  const commentRemove = commentNo => {
+    const a = commentList.filter(comment => comment.commentNo !== commentNo);
+    setCommentList(a);
   };
 
   return (
@@ -125,7 +135,11 @@ const KilFeed = () => {
                   &nbsp;<span>ㅇㅇ</span>{' '}
                 </label>
               </div>
-              <Comments commentList={commentList} />
+              <Comments
+                commentList={commentList}
+                commentRemove={commentRemove}
+                commentLiked={commentLiked}
+              />
             </div>
             <div className="feedTimeAgo">
               <p>2시간 전</p>
