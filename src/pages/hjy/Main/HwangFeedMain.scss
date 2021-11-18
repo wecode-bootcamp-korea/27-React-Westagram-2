@@ -1,134 +1,124 @@
 @import '../../../styles/variables.scss';
 
-
-
-#main{
+#main {
   // @include containerWidth;
   // @include flexCenter;
 
-  #article{
+  #article {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
-  
-  #feed-section{
+
+  #feedSection {
     width: 613px;
     border: 1px solid #ccc;
     // @include theme;
   }
-  
 }
 
-#feed-section{
-  .feed-user{
+#feedSection {
+  .feedUser {
     // @include flexSpaceBetweenCenter;
     padding: 10px 15px;
-    
-    .feed-info{
+
+    .feedInfo {
       // @include flexCenter;
-  
-      .feed-user-profile-name{
+
+      .feedUserProfileName {
         padding-left: 10px;
         font-size: 1.2em;
       }
-      
-      .feed-user-profile-img{
+
+      .feedUserProfileImg {
         // @include profileImgWidth;
       }
-
     }
-
   }
-  
 }
 
-.interaction{
+.interaction {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
-    .like-btn,
-    .review-btn,
-    .share-btn, 
-    .keep-btn {
-      // @include iconReaction;
+  .likeBtn,
+  .reviewBtn,
+  .shareBtn,
+  .keepBtn {
+    // @include iconReaction;
   }
 }
 
-.reaction-contents-wrap{
+.reactionContentsWrap {
   padding: 0 15px;
 
-  .check-like{
+  .checkLike {
     display: flex;
     align-items: center;
     padding: 0 0 10px;
 
-    .check-like-id-profile-1{
+    .checkLikeIdProfile1 {
       // @include profilemgWidth($size:20px);
     }
-    
-    .check-like-id-profile-1 img{
+
+    .checkLikeIdProfile1 img {
       height: 100%;
     }
 
-    .check-like-summary{
+    .checkLikeSummary {
       padding-left: 15px;
     }
-
   }
 }
 
-.input-review-container{
-  
-  .minimal-contents{
+.inputReviewContainer {
+  .minimalContents {
     width: 200px;
     height: 30px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
-  
-  .more-btn{
+
+  .moreBtn {
     cursor: pointer;
   }
-  
-  .review-list{
+
+  .reviewList {
     position: relative;
     padding: 10px 0;
   }
-  
-  .review-id{
+
+  .reviewId {
     font-weight: bold;
   }
-  
-  .review-contents{
+
+  .reviewContents {
     padding-left: 5px;
   }
-  
-  .review-like{
+
+  .reviewLike {
     position: absolute;
     right: 0;
     cursor: pointer;
   }
-  
-  .input-review-container{
+
+  .inputReviewContainer {
     position: relative;
     border-top: 1px solid #ccc;
   }
-  
-  .input-review{
+
+  .inputReview {
     width: 100%;
     border: none;
     padding: 10px 15px;
   }
-  
-  .review-upload-btn{
+
+  .reviewUploadBtn {
     position: absolute;
     right: 15px;
     top: 10px;
-    color: rgba(0,149,246,1);
-    background-color:#fff;
+    color: rgba(0, 149, 246, 1);
+    background-color: #fff;
   }
 }
-
-

@@ -2,69 +2,68 @@
 
 #asideSection {
   width: 290px;
-} 
+}
 
-.profile{
+.profile {
   display: flex;
   align-items: center;
 
-  .profileImg{
+  .profileImg {
     // @include profileImgWidth;
   }
-  
-  .profile .profileImg img{
+
+  .profile .profileImg img {
     height: 100%;
   }
-  
-  .profile .profileDescription{
+
+  .profile .profileDescription {
     padding-left: 15px;
   }
-
 }
 
-.storyFeed{
+.storyFeed {
   // @include borderDefault;
   margin: 20px 0;
   height: 220px;
   overflow: hidden;
 }
 
-.storyFeedRecommend{
+.storyFeedRecommend {
   // @include borderDefault;
   margin: 20px 0;
   height: 190px;
   overflow: hidden;
 }
 
-.storyWrap{
+.storyWrap {
   margin: 0 auto;
   width: 85%;
 
-  .storyFeedHeadWrap{
+  .storyFeedHeadWrap {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
   }
-  
-  .storyProfile{
+
+  .storyProfile {
     display: flex;
     align-items: center;
     margin: 10px 0;
   }
-  
-  .storyProfile .storyProfileImg{
+
+  .storyProfile .storyProfileImg {
     // @include profileImgWidth($size:40px);
   }
-  
-  .storyProfile .storyProfileImg img{
+
+  .storyProfile .storyProfileImg img {
     height: 100%;
   }
-  
-  .storyProfileDescription{
+
+  .storyProfileDescription {
     padding-left: 15px;
   }
-  
-  .storySameFollowersView{
+
+  .storySameFollowersView {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -72,6 +71,3 @@
     width: 150px;
   }
 }
-
-
-
