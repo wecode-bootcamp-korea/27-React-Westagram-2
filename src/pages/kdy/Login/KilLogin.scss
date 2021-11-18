@@ -1,16 +1,17 @@
+$borderLine: 1px solid #dbdbdb;
+
 @mixin flexible {
   display: flex;
   justify-content: center;
 }
 
-$borderLine: 1px solid #dbdbdb;
-
 html {
   height: 100%;
 }
 
-#root, body {
-  height: 100%
+#root,
+body {
+  height: 100%;
 }
 
 .loginMain {

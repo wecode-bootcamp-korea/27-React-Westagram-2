@@ -2,6 +2,7 @@ import React from 'react';
 import './KilMain.scss';
 import Nav from '../../../components/Nav/Nav';
 import KilFeed from './Feed/KilFeed';
+import KilAside from './Aside/KilAside';
 
 const KilMain = () => {
   return (
@@ -12,6 +13,7 @@ const KilMain = () => {
           <section className="feedsWrapper">
             <KilFeed />
           </section>
+          <KilAside />
         </section>
       </main>
     </>
