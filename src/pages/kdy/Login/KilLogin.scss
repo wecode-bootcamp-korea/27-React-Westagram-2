@@ -1,0 +1,102 @@
+@mixin flexible {
+  display: flex;
+  justify-content: center;
+}
+
+$border-line: 1px solid #dbdbdb;
+
+html {
+  height: 100%;
+}
+
+#root, body {
+  height: 100%
+}
+
+.login-main {
+  @include flexible;
+  position: relative;
+  align-items: center;
+
+  height: 100%;
+}
+
+.login-wrapper {
+  @include flexible;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 350px;
+
+  background-color: #fff;
+  border: $border-line;
+  border-radius: 1px;
+  padding: 10px 10px;
+
+  h1 {
+    margin: 22px auto 28px;
+
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+  }
+}
+
+.form-container {
+  @include flexible;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 24px;
+}
+
+.input-wrapper {
+  margin: 0 40px 6px;
+
+  input {
+    position: relative;
+
+    width: 250px;
+    padding: 10px 10px;
+
+    background-color: #fff;
+    border: $border-line;
+    border-radius: 4px;
+
+    font-size: 14px;
+  }
+
+  button {
+    position: relative;
+
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 10px 10px;
+    margin-top: 20px;
+
+    background-color: rgb(0, 140, 244);
+
+    color: white;
+    font-size: 14px;
+  }
+
+  button:disabled {
+    background-color: rgb(182, 223, 255);
+  }
+
+  a {
+    position: relative;
+
+    width: 100%;
+
+    color: rgb(0, 140, 244);
+    text-decoration-line: none;
+    font-size: 14px;
+  }
+}
+
+.pw-remind {
+  text-align: center;
+
+  margin-top: 30px;
+}
