@@ -8,7 +8,7 @@ import {
   faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons';
 
-import '../Main/HwangFeedMain.scss';
+import './HwangFeedMain.scss';
 
 const HwangFeedMain = () => {
   return (
@@ -17,7 +17,7 @@ const HwangFeedMain = () => {
         <div className="feedInfo">
           <span className="feedUserProfileImg">
             <Link to="#">
-              <img src="/images/webprofile1.png" alt="webprofile1" />
+              <img src="images/hjy/Main/webprofile1.png" alt="webprofile1" />
             </Link>
           </span>
           <span className="feedUserProfileName">
@@ -36,7 +36,7 @@ const HwangFeedMain = () => {
       </div>
       <div className="feedContents">
         <div className="feedImg">
-          <img src="/images/feedimg.png" alt="feedImg" />
+          <img src="images/hjy/Main/feedimg.png" alt="feedImg" />
         </div>
         <div className="interaction">
           <div className="reactionMenu">
@@ -68,7 +68,7 @@ const HwangFeedMain = () => {
           <div className="checkLike">
             <span className="checkLikeIdProfile1">
               <Link to="#">
-                <img src="/images/webprofile2.png" alt="" />
+                <img src="images/hjy/Main/webprofile2.png" alt="" />
               </Link>
             </span>
             <span className="checkLikeSummary">

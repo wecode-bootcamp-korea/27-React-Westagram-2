@@ -9,7 +9,7 @@
   align-items: center;
 
   .profileImg {
-    // @include profileImgWidth;
+    @include profileImgWidth;
   }
 
   .profile .profileImg img {
@@ -22,14 +22,14 @@
 }
 
 .storyFeed {
-  // @include borderDefault;
+  @include borderDefault;
   margin: 20px 0;
   height: 220px;
   overflow: hidden;
 }
 
 .storyFeedRecommend {
-  // @include borderDefault;
+  @include borderDefault;
   margin: 20px 0;
   height: 190px;
   overflow: hidden;
@@ -52,7 +52,7 @@
   }
 
   .storyProfile .storyProfileImg {
-    // @include profileImgWidth($size:40px);
+    @include profileImgWidth($size: 40px);
   }
 
   .storyProfile .storyProfileImg img {

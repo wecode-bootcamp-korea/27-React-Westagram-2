@@ -9,7 +9,7 @@ const HwangAside = () => {
       <div className="asideInner">
         <div className="profile">
           <span className="profileImg">
-            <img src="/images/webprofile1.png" alt="" />
+            <img src="images/hjy/Main/webprofile1.png" alt="" />
           </span>
           <span className="profileDescription">
             <p className="englishName">
@@ -32,7 +32,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile1.png" alt="" />
+                    <img src="images/hjy/Main/webprofile1.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -47,7 +47,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile2.png" alt="" />
+                    <img src="images/hjy/Main/webprofile2.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -62,7 +62,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile3.png" alt="" />
+                    <img src="images/hjy/Main/webprofile3.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -77,7 +77,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile4.png" alt="" />
+                    <img src="images/hjy/Main/webprofile4.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -92,7 +92,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="img/webprofile5.png" alt="" />
+                    <img src="images/hjy/Main/webprofile5.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -109,7 +109,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile1.png" alt="" />
+                    <img src="images/hjy/Main/webprofile1.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -124,7 +124,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile2.png" alt="" />
+                    <img src="images/hjy/Main/webprofile2.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -139,7 +139,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile3.png" alt="" />
+                    <img src="images/hjy/Main/webprofile3.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -154,7 +154,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile4.png" alt="" />
+                    <img src="images/hjy/Main/webprofile4.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -169,7 +169,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile5.png" alt="" />
+                    <img src="images/hjy/Main/webprofile5.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -198,7 +198,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile1.png" alt="" />
+                    <img src="images/hjy/Main/webprofile1.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -215,7 +215,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile1.png" alt="" />
+                    <img src="images/hjy/Main/webprofile1.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">
@@ -232,7 +232,7 @@ const HwangAside = () => {
               <div className="storyProfile">
                 <span className="storyProfileImg">
                   <Link to="#">
-                    <img src="/images/webprofile1.png" alt="" />
+                    <img src="images/hjy/Main/webprofile1.png" alt="" />
                   </Link>
                 </span>
                 <span className="storyProfileDescription">

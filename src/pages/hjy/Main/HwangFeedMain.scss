@@ -1,8 +1,8 @@
 @import '../../../styles/variables.scss';
 
 #main {
-  // @include containerWidth;
-  // @include flexCenter;
+  @include containerWidth;
+  @include flexCenter;
 
   #article {
     width: 100%;
@@ -13,17 +13,17 @@
   #feedSection {
     width: 613px;
     border: 1px solid #ccc;
-    // @include theme;
+    @include theme;
   }
 }
 
 #feedSection {
   .feedUser {
-    // @include flexSpaceBetweenCenter;
+    @include flexSpaceBetweenCenter;
     padding: 10px 15px;
 
     .feedInfo {
-      // @include flexCenter;
+      @include flexCenter;
 
       .feedUserProfileName {
         padding-left: 10px;
@@ -31,7 +31,7 @@
       }
 
       .feedUserProfileImg {
-        // @include profileImgWidth;
+        @include profileImgWidth;
       }
     }
   }
@@ -45,7 +45,7 @@
   .reviewBtn,
   .shareBtn,
   .keepBtn {
-    // @include iconReaction;
+    @include iconReaction;
   }
 }
 
@@ -58,7 +58,7 @@
     padding: 0 0 10px;
 
     .checkLikeIdProfile1 {
-      // @include profilemgWidth($size:20px);
+      @include profileImgWidth($size: 20px);
     }
 
     .checkLikeIdProfile1 img {
@@ -72,6 +72,7 @@
 }
 
 .inputReviewContainer {
+  position: relative;
   .minimalContents {
     width: 200px;
     height: 30px;

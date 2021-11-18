@@ -19,12 +19,14 @@ const HwangLoginForm = () => {
         />
         <input className="passwordInput" type="text" placeholder="비밀번호" />
         <button className="btnDefault btnLightBlue">
-          <Link to="/main">로그인</Link>
+          <Link to="/hwangmain">로그인</Link>
         </button>
-        <button onClick={goToMain}>useNavigate사용</button>
+        <button className="btnDefault" onClick={goToMain}>
+          useNavigate사용
+        </button>
       </div>
       <p className="searchPassword">
-        <Link to="/main">비밀번호를 잊으셨나요?</Link>
+        <Link to="/hwangmain">비밀번호를 잊으셨나요?</Link>
       </p>
     </div>
   );

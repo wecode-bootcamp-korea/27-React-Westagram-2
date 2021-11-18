@@ -1,42 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import '../../../styles/variables.scss';
 
-.boxWrap{
+.boxWrap {
   max-width: 350px;
-  // @include borderDefault;
+  @include borderDefault;
   text-align: center;
   margin: 100px auto;
 }
-
-.loginWrap{
+.logo {
+  font-family: 'Lobster', cursive;
+  font-size: 28px;
+  padding: 20px 0;
+}
+.loginWrap {
   display: flex;
   flex-direction: column;
   margin-top: 24px;
 }
 
-.loginWrap input{
+.loginWrap input {
   height: 36px;
   margin: 0 41px 6px;
   padding: 14px 0 2px 8px;
 }
 
-.btnDefalut{
-  // @include buttonDefault;
+.btnDefault {
+  @include buttonDefault;
 }
 
-.btnLightBlue{
-  background: rgba(0,149,246);
+.btnLightBlue {
+  background: rgba(0, 149, 246);
   opacity: 1;
 }
 
-.btnChageBlue{
+.btnChageBlue {
   background-color: #0095f6;
 }
 
-.searchPassword{
+.searchPassword {
   margin: 100px 0 20px;
 }
 
-.searchPassword a{
-  color: rgba(0,55,107,1);
+.searchPassword a {
+  color: rgba(0, 55, 107, 1);
 }
