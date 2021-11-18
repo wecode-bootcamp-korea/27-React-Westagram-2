@@ -17,6 +17,7 @@
   main {
     position: relative;
     background-color: $verylightgray;
+    z-index: -1;
   }
 
   .mainWrap {
