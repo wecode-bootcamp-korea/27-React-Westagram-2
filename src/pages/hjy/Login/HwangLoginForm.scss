@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
+
+.boxWrap{
+  max-width: 350px;
+  // @include borderDefault;
+  text-align: center;
+  margin: 100px auto;
+}
+
+.loginWrap{
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.loginWrap input{
+  height: 36px;
+  margin: 0 41px 6px;
+  padding: 14px 0 2px 8px;
+}
+
+.btnDefalut{
+  // @include buttonDefault;
+}
+
+.btnLightBlue{
+  background: rgba(var(--d69,0,149,246),.3);
+  opacity: 1;
+}
+
+.btnChageBlue{
+  background-color: #0095f6;
+}
+
+.searchPassword{
+  margin: 100px 0 20px;
+}
+
+.searchPassword a{
+  color: rgba(0,55,107,1);
+}

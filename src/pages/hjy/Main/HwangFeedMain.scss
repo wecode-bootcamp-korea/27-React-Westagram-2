@@ -1,0 +1,134 @@
+@import '../../../styles/variables.scss';
+
+
+
+#main{
+  // @include containerWidth;
+  // @include flexCenter;
+
+  #article{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #feed-section{
+    width: 613px;
+    border: 1px solid #ccc;
+    // @include theme;
+  }
+  
+}
+
+#feed-section{
+  .feed-user{
+    // @include flexSpaceBetweenCenter;
+    padding: 10px 15px;
+    
+    .feed-info{
+      // @include flexCenter;
+  
+      .feed-user-profile-name{
+        padding-left: 10px;
+        font-size: 1.2em;
+      }
+      
+      .feed-user-profile-img{
+        // @include profileImgWidth;
+      }
+
+    }
+
+  }
+  
+}
+
+.interaction{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+    .like-btn,
+    .review-btn,
+    .share-btn, 
+    .keep-btn {
+      // @include iconReaction;
+  }
+}
+
+.reaction-contents-wrap{
+  padding: 0 15px;
+
+  .check-like{
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px;
+
+    .check-like-id-profile-1{
+      // @include profilemgWidth($size:20px);
+    }
+    
+    .check-like-id-profile-1 img{
+      height: 100%;
+    }
+
+    .check-like-summary{
+      padding-left: 15px;
+    }
+
+  }
+}
+
+.input-review-container{
+  
+  .minimal-contents{
+    width: 200px;
+    height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  .more-btn{
+    cursor: pointer;
+  }
+  
+  .review-list{
+    position: relative;
+    padding: 10px 0;
+  }
+  
+  .review-id{
+    font-weight: bold;
+  }
+  
+  .review-contents{
+    padding-left: 5px;
+  }
+  
+  .review-like{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+  
+  .input-review-container{
+    position: relative;
+    border-top: 1px solid #ccc;
+  }
+  
+  .input-review{
+    width: 100%;
+    border: none;
+    padding: 10px 15px;
+  }
+  
+  .review-upload-btn{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: rgba(0,149,246,1);
+    background-color:#fff;
+  }
+}
+
+

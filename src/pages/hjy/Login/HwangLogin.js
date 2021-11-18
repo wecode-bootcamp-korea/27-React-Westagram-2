@@ -1,7 +1,14 @@
 import React from 'react';
 
-const HwangLogin = () => {
-  return <div>hi</div>;
-};
+import HwangLoginForm from './HwangLoginForm';
 
+
+function HwangLogin() {
+  return(
+    <>
+      <HwangLoginForm/>
+    </>
+    
+  );
+}
 export default HwangLogin;
