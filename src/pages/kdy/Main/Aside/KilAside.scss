@@ -1,16 +1,16 @@
-.people-section {
+.peopleSection {
   width: 293px;
 
   background-color: transparent;
 
-  .people-container {
+  .peopleContainer {
     position: fixed;
     display: flex;
     flex-direction: column;
 
     width: 292px;
 
-    .user-container {
+    .userContainer {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -19,31 +19,31 @@
       margin-bottom: 10px;
       margin-top: 18px;
 
-      .user-profile-img {
+      .userProfileImg {
         margin-right: 12px;
       }
 
-      .user-info {
+      .userInfo {
         display: flex;
         flex-direction: column;
 
         padding-left: 10px;
         width: 100%;
 
-        .user-id {
+        .userId {
           font-size: 14px;
           text-decoration-line: none;
           font-weight: bold;
           color: #262626;
         }
 
-        .user-name {
+        .userName {
           font-size: 14px;
           color: #8e8e8e;
         }
       }
 
-      .user-conversion {
+      .userConversion {
         width: 35px;
         padding: 0;
         margin-left: 6px;
@@ -56,11 +56,11 @@
       }
     }
 
-    .recommended-people {
+    .recommendedPeople {
       display: flex;
       flex-direction: column;
 
-      .recommend-header {
+      .recommendHeader {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -80,7 +80,7 @@
         }
       }
 
-      ul.recommended-people-list {
+      ul.recommendedPeopleList {
         padding: 8px 0;
 
         li {
@@ -90,7 +90,7 @@
           width: 100%;
           padding: 8px 0;
 
-          .recommended-user-info {
+          .recommendedUserInfo {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -98,7 +98,7 @@
             width: 100%;
           }
 
-          .follow-button {
+          .followButton {
             border: none;
             background-color: transparent;
             width: 50px;
@@ -111,18 +111,18 @@
           }
         }
 
-        .follow-info {
+        .followInfo {
           color: #8e8e8e;
           font-size: 12px;
         }
 
-        .recommended-profile-img {
+        .recommendedProfileImg {
           margin-right: 12px;
         }
       }
     }
 
-    .corp-etc {
+    .corpEtc {
       display: flex;
       flex-direction: column;
 
@@ -130,7 +130,7 @@
       font-size: 11px;
       text-decoration: none;
 
-      ul.link-list {
+      ul.linkList {
         padding-bottom: 16px;
 
         list-style: none;
@@ -148,7 +148,7 @@
           content: "•";
         }
 
-        li:last-child::after {
+        li:lastChild::after {
           content: none;
         }
       }
@@ -157,7 +157,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  .people-section {
+  .peopleSection {
     display: none;
   }
 }

@@ -3,92 +3,92 @@ import './KilAside.scss';
 
 const KilAside = () => {
   return (
-    <section className="people-section">
-      <div className="people-container">
-        <div className="user-container">
-          <div className="profile-circle">
+    <section className="peopleSection">
+      <div className="peopleContainer">
+        <div className="userContainer">
+          <div className="profileCircle">
             <img
               alt="user-profile"
               className="profileImg userProfileImg"
               src="images/kdy/ralo.jpeg"
             />
           </div>
-          <div className="user-info">
+          <div className="userInfo">
             <label>
-              <a className="user-id" href="#">
+              <a className="userId" href="#">
                 ralo
               </a>
-              <p className="user-name">김찬호</p>
+              <p className="userName">김찬호</p>
             </label>
           </div>
-          <button className="user-conversion">게시</button>
+          <button className="userConversion">게시</button>
         </div>
-        <div className="recommended-people">
-          <div className="recommend-header">
+        <div className="recommendedPeople">
+          <div className="recommendHeader">
             <h5>회원님을 위한 추천</h5>
             <a href="#">모두 보기</a>
           </div>
-          <ul className="recommended-people-list">
+          <ul className="recommendedPeopleList">
             <li>
               <img
                 alt="recommed-profile1"
-                className="smallProfileImg recommended-profile-img"
+                className="smallProfileImg recommendedProfileImg"
                 src="images/kdy/paka.jpeg"
               />
-              <label className="recommended-user-info">
-                <a className="user-id" href="#">
+              <label className="recommendedUserInfo">
+                <a className="userId" href="#">
                   paka9999
                 </a>
-                <p className="follow-info">회원님을 위한 추천</p>
+                <p className="followInfo">회원님을 위한 추천</p>
               </label>
-              <button className="follow-button">팔로우</button>
+              <button className="followButton">팔로우</button>
             </li>
             <li>
               <img
                 alt="recommed-profile1"
-                className="smallProfileImg recommended-profile-img"
+                className="smallProfileImg recommendedProfileImg"
                 src="images/kdy/paka.jpeg"
               />
-              <label className="recommended-user-info">
-                <a className="user-id" href="#">
+              <label className="recommendedUserInfo">
+                <a className="userId" href="#">
                   paka9999
                 </a>
-                <p className="follow-info">회원님을 위한 추천</p>
+                <p className="followInfo">회원님을 위한 추천</p>
               </label>
-              <button className="follow-button">팔로우</button>
+              <button className="followButton">팔로우</button>
             </li>
             <li>
               <img
                 alt="recommed-profile1"
-                className="smallProfileImg recommended-profile-img"
+                className="smallProfileImg recommendedProfileImg"
                 src="images/kdy/paka.jpeg"
               />
-              <label className="recommended-user-info">
-                <a className="user-id" href="#">
+              <label className="recommendedUserInfo">
+                <a className="userId" href="#">
                   paka9999
                 </a>
-                <p className="follow-info">회원님을 위한 추천</p>
+                <p className="followInfo">회원님을 위한 추천</p>
               </label>
-              <button className="follow-button">팔로우</button>
+              <button className="followButton">팔로우</button>
             </li>
             <li>
               <img
                 alt="recommed-profile1"
-                className="smallProfileImg recommended-profile-img"
+                className="smallProfileImg recommendedProfileImg"
                 src="images/kdy/paka.jpeg"
               />
-              <label className="recommended-user-info">
-                <a className="user-id" href="#">
+              <label className="recommendedUserInfo">
+                <a className="userId" href="#">
                   paka9999
                 </a>
-                <p className="follow-info">회원님을 위한 추천</p>
+                <p className="followInfo">회원님을 위한 추천</p>
               </label>
-              <button className="follow-button">팔로우</button>
+              <button className="followButton">팔로우</button>
             </li>
           </ul>
         </div>
-        <div className="corp-etc">
-          <ul className="link-list">
+        <div className="corpEtc">
+          <ul className="linkList">
             <li>
               <a href="#">소개</a>
             </li>
