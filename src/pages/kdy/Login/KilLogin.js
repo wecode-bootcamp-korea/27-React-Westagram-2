@@ -45,12 +45,12 @@ const KilLogin = () => {
   return (
     <>
       <body>
-        <main className="login-main">
-          <div className="login-wrapper">
+        <main className="loginMain">
+          <div className="loginWrapper">
             <h1 className="h1back">westagram</h1>
-            <div className="form-container">
+            <div className="formContainer">
               <form id="login">
-                <div className="input-wrapper">
+                <div className="inputWrapper">
                   <input
                     name="userId"
                     type="text"
@@ -59,7 +59,7 @@ const KilLogin = () => {
                     onChange={handleUserInput}
                   />
                 </div>
-                <div className="input-wrapper">
+                <div className="inputWrapper">
                   <input
                     name="userPw"
                     type="password"
@@ -68,20 +68,18 @@ const KilLogin = () => {
                     onChange={handleUserInput}
                   />
                 </div>
-                <div className="input-wrapper">
-                  <button id="login-button" disabled ref={loginButton}>
+                <div className="inputWrapper">
+                  <button id="loginButton" disabled ref={loginButton}>
                     로그인
                   </button>
                 </div>
-                <div className="input-wrapper pw-remind">
+                <div className="inputWrapper pwRemind">
                   <a href="">비밀번호를 잊으셨나요?</a>
                 </div>
               </form>
             </div>
           </div>
         </main>
-
-        <script src="js/login.js"></script>
       </body>
     </>
   );

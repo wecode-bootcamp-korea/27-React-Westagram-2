@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-$border-line: 1px solid #dbdbdb;
+$borderLine: 1px solid #dbdbdb;
 
 html {
   height: 100%;
@@ -13,7 +13,7 @@ html {
   height: 100%
 }
 
-.login-main {
+.loginMain {
   @include flexible;
   position: relative;
   align-items: center;
@@ -21,7 +21,7 @@ html {
   height: 100%;
 }
 
-.login-wrapper {
+.loginWrapper {
   @include flexible;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ html {
   min-width: 350px;
 
   background-color: #fff;
-  border: $border-line;
+  border: $borderLine;
   border-radius: 1px;
   padding: 10px 10px;
 
@@ -41,7 +41,7 @@ html {
   }
 }
 
-.form-container {
+.formContainer {
   @include flexible;
   flex-direction: column;
   align-items: center;
@@ -49,7 +49,7 @@ html {
   margin-top: 24px;
 }
 
-.input-wrapper {
+.inputWrapper {
   margin: 0 40px 6px;
 
   input {
@@ -59,7 +59,7 @@ html {
     padding: 10px 10px;
 
     background-color: #fff;
-    border: $border-line;
+    border: $borderLine;
     border-radius: 4px;
 
     font-size: 14px;
@@ -95,7 +95,7 @@ html {
   }
 }
 
-.pw-remind {
+.pwRemind {
   text-align: center;
 
   margin-top: 30px;
