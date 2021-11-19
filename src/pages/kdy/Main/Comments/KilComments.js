@@ -1,4 +1,4 @@
-import { React, useRef, useState } from 'react';
+import React from 'react';
 import './KilComments.scss';
 
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -17,7 +17,7 @@ const Comment = ({ comment, commentLiked, commentRemove }) => {
       </label>
       <label>
         <button
-          className={'commentLikeButton ' + (!comment.liked ? 'liked' : '')}
+          className={'commentLikeButton ' + (comment.liked ? 'liked' : '')}
           onClick={() => commentLiked(comment.commentNo)}
         >
           <FontAwesomeIcon icon={faHeart} />

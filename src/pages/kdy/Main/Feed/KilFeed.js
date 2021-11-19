@@ -40,18 +40,20 @@ const KilFeed = () => {
   };
 
   const commentLiked = commentNo => {
-    const temp = commentList.map(comment =>
+    const adjustedCommentList = commentList.map(comment =>
       comment.commentNo === commentNo
         ? { ...comment, liked: !comment.liked }
         : comment
     );
-    setCommentList(temp);
+    setCommentList(adjustedCommentList);
     console.log(commentList);
   };
 
   const commentRemove = commentNo => {
-    const a = commentList.filter(comment => comment.commentNo !== commentNo);
-    setCommentList(a);
+    const adjustedCommentList = commentList.filter(
+      comment => comment.commentNo !== commentNo
+    );
+    setCommentList(adjustedCommentList);
   };
 
   return (
@@ -122,15 +124,6 @@ const KilFeed = () => {
                   {' '}
                   <a className="userName" href="#">
                     ralo
-                  </a>
-                  &nbsp;<span>ㅇㅇ</span>{' '}
-                </label>
-              </div>
-              <div id="comment-0" className="comment">
-                <label>
-                  {' '}
-                  <a className="userName" href="#">
-                    um_stil_alive
                   </a>
                   &nbsp;<span>ㅇㅇ</span>{' '}
                 </label>
