@@ -1,12 +1,17 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './KimLogin.scss';
 
 const KimLogin = () => {
-  const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/Main');
+  const [memberInput, setMemberInput] = useState({
+    id: '',
+    pwd: '',
+  });
+
+  const handleMemberInput = e => {
+    const { name, value } = e.target;
+    setMemberInput({ ...memberInput, [name]: value });
   };
 
   return (
@@ -17,10 +22,18 @@ const KimLogin = () => {
           type="text"
           className="userId"
           placeholder="전화번호, 사용자 이름 또는 이메일"
+          onChange={handleMemberInput}
+          name="id"
         />
         <br />
-        <input type="password" className="password" placeholder="비밀번호" />
-        <button className="loginBtn" onClick={goToMain} disabled>
+        <input
+          type="password"
+          className="password"
+          placeholder="비밀번호"
+          onChange={handleMemberInput}
+          name="pwd"
+        />
+        <button className="loginBtn" disabled>
           로그인
         </button>
       </form>
