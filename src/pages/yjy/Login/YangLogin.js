@@ -7,7 +7,7 @@ import Input from './Input';
 
 const YangLogin = () => {
   return (
-    <>
+    <div>
       <div className="login">
         <div className="wrapper">
           <h1>Westagram</h1>
@@ -22,7 +22,7 @@ const YangLogin = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

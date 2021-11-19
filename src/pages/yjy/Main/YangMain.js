@@ -5,11 +5,12 @@ import Aside from './Aside';
 
 // import '../../../styles/variables.scss';
 import './YangMain.scss';
+import Nav from '../../../components/Nav/Nav';
 
 const YangMain = () => {
   return (
     <>
-      {/* <Nav /> */}
+      <Nav />
       <div className="main">
         <div className="wrapper">
           <div className="feeds">
