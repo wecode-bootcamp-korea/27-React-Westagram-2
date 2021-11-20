@@ -6,18 +6,17 @@ const Button = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div>
       <button
         className="loginButton"
         type="button"
         onClick={() => navigate('/YangMain')}
-        // disabled
       >
         {/* <Link className="link" to="/main"> */}
         로그인
         {/* </Link> */}
       </button>
-    </>
+    </div>
   );
 };
 
