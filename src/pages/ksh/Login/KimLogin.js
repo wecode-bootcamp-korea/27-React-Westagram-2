@@ -7,17 +7,23 @@ const KimLogin = () => {
   const [memberInput, setMemberInput] = useState({
     id: '',
     pwd: '',
+    isActive: false,
   });
 
-  const handleMemberInput = e => {
-    const { name, value } = e.target;
-    setMemberInput({ ...memberInput, [name]: value });
-  };
+  function handleMemberInput(e) {
+    setMemberInput({ ...memberInput, [e.target.name]: e.target.value });
+  }
 
+  function activeBtn() {
+    memberInput.id.includes('@') && memberInput.pwd.length >= 5
+      ? setMemberInput({ ...memberInput, isActive: true })
+      : setMemberInput({ ...memberInput, isActive: false });
+  }
+  console.log(memberInput);
   return (
     <div className="Login">
       <p className="logo">Westagram</p>
-      <form className="loginForm">
+      <form className="loginForm" onKeyUp={activeBtn}>
         <input
           type="text"
           className="userId"
@@ -33,7 +39,11 @@ const KimLogin = () => {
           onChange={handleMemberInput}
           name="pwd"
         />
-        <button className="loginBtn" disabled>
+        <button
+          className={
+            'loginBtn ' + (memberInput.isActive ? 'active' : 'disabled')
+          }
+        >
           로그인
         </button>
       </form>

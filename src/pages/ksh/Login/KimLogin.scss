@@ -32,12 +32,18 @@
       width: 100%;
       font-size: $medium;
       font-weight: bold;
-      background-color: $lightblue;
       color: white;
       border: none;
       padding: 10px;
       margin-top: 16px;
       border-radius: 4px;
+
+      &.active {
+        background-color: #0095f6;
+      }
+      &.disabled {
+        background-color: #b2dffc;
+      }
     }
   }
   .forgotPassword {
