@@ -22,19 +22,27 @@
   height: 36px;
   margin: 0 41px 6px;
   padding: 14px 0 2px 8px;
+  border: 1px solid #eee;
 }
 
-.btnDefault {
+.unactiveBtn {
   @include buttonDefault;
+  background-color: #b2dffc;
+  cursor: default;
+  color: #fff;
+}
+.unactiveBtn a {
+  color: #fff;
 }
 
-.btnLightBlue {
-  background: rgba(0, 149, 246);
-  opacity: 1;
+.activeBtn {
+  @include buttonDefault;
+  background: #0095f6;
+  color: #fff;
 }
 
-.btnChageBlue {
-  background-color: #0095f6;
+.activeBtn a {
+  color: #fff;
 }
 
 .searchPassword {
