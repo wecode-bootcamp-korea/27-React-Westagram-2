@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBookmark,
   faComment,
+  faEgg,
+  faEllipsisH,
   faHeart,
   faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons';
 
+import HwangReview from './HwangReview';
 import './HwangFeedMain.scss';
 
 const HwangFeedMain = () => {
+  //리뷰 id, 글 인풋 값
+  const [reviewIdValue, setReviewIdValue] = useState('Fix-Id');
+  const [reviewContentsValue, setReviewContentsValue] = useState('');
+  //리뷰 콘텐츠 배열 저장소
+  const [postReviewContents, setPostReviewContents] = useState([]);
+  //리뷰 유효성 검사
+  const [isValied, setIsValied] = useState(false);
+  const paintReview = e => {
+    e.preventDefault();
+    const copyArr = [...postReviewContents];
+    copyArr.push(reviewContentsValue);
+    setPostReviewContents(copyArr);
+    setReviewContentsValue('');
+  };
+  //리뷰 인풋 리셋
+  const reset = () => {
+    setReviewContentsValue('');
+  };
   return (
     <section id="feedSection" className="section">
       <div className="feedUser">
@@ -29,7 +50,7 @@ const HwangFeedMain = () => {
         <div className="feedUserMenu">
           <span className="menuBtn">
             <Link to="#">
-              <i className="fas fa-ellipsis-h"></i>
+              <FontAwesomeIcon icon={faEllipsisH} />
             </Link>
           </span>
         </div>
@@ -88,15 +109,36 @@ const HwangFeedMain = () => {
             </span>
           </div>
           <span className="moreBtn">더 보기</span>
-          <div className="reviewList"></div>
+          {postReviewContents.map((item, i) => {
+            return (
+              <HwangReview reviewIdValue={reviewIdValue} item={item} key={i} />
+            );
+          })}
         </div>
-        <form className="inputReviewContainer" action="main.html" method="POST">
+        <form className="inputReviewContainer" method="POST">
           <input
+            value={reviewContentsValue}
             className="inputReview"
             type="text"
             placeholder="댓글달기..."
+            onChange={event => {
+              setReviewContentsValue(event.target.value);
+            }}
+            onKeyUp={event => {
+              event.target.value.length > 0
+                ? setIsValied(true)
+                : setIsValied(false);
+            }}
           />
-          <button className="reviewUploadBtn">게시</button>
+          <button
+            className={
+              isValied === true ? 'reviewUploadBtnActive' : 'reviewUploadBtn'
+            }
+            onClick={paintReview}
+            disabled={isValied ? false : true}
+          >
+            게시
+          </button>
         </form>
       </div>
     </section>

@@ -3,7 +3,8 @@
 #main {
   @include containerWidth;
   @include flexCenter;
-
+  width: 935px;
+  margin: 50px auto;
   #article {
     width: 100%;
     display: flex;
@@ -71,6 +72,19 @@
   }
 }
 
+.reviewList {
+  position: relative;
+  padding: 5px 0;
+
+  .reviewId {
+    font-weight: bold;
+  }
+
+  .reviewContents {
+    padding-left: 5px;
+  }
+}
+
 .inputReviewContainer {
   position: relative;
   .minimalContents {
@@ -83,19 +97,6 @@
 
   .moreBtn {
     cursor: pointer;
-  }
-
-  .reviewList {
-    position: relative;
-    padding: 10px 0;
-  }
-
-  .reviewId {
-    font-weight: bold;
-  }
-
-  .reviewContents {
-    padding-left: 5px;
   }
 
   .reviewLike {
@@ -116,6 +117,13 @@
   }
 
   .reviewUploadBtn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: rgb(212, 228, 238);
+    background-color: #fff;
+  }
+  .reviewUploadBtnActive {
     position: absolute;
     right: 15px;
     top: 10px;

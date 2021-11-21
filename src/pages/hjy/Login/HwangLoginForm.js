@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import './HwangLoginForm.scss';
-
 const HwangLoginForm = () => {
   //이메일, 비밀번호 확인
   const [email, setEmail] = useState('');
@@ -23,7 +22,9 @@ const HwangLoginForm = () => {
   //인증통과시 메인화면 이동
   const navigate = useNavigate();
   const goToMain = () => {
-    isActive === true ? navigate('/hwangmain') : navigate('hwanglogin');
+    isActive
+      ? navigate('/hwangmain')
+      : alert('가입된 회원이 아닙니다. 회원가입을 먼저 해주세요.');
   };
   return (
     <div className="boxWrap">
@@ -40,12 +41,12 @@ const HwangLoginForm = () => {
           onChange={handlePasswordInput}
           onKeyUp={isPassedLogin}
           className="password"
-          type="text"
+          type="password"
           placeholder="비밀번호"
         />
         <button
           type="submit"
-          className={isActive ? 'activeBtn' : 'unactiveBtn'}
+          className={isActive ? 'activeBtn' : 'unActiveBtn'}
           onClick={goToMain}
           disabled={email === '' || password === '' ? true : false}
           // disabled={!email || !password}
