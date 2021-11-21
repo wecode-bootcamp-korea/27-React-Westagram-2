@@ -1,4 +1,4 @@
-import { React, useRef, useState } from 'react';
+import { React, useRef, useState, useEffect } from 'react';
 import './KilFeed.scss';
 
 import {
@@ -11,15 +11,17 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Comments from '../Comments/KilComments';
 
-const KilFeed = () => {
+const KilFeed = ({ feedData }) => {
   const [commentInput, setCommentInput] = useState('');
   const [commentList, setCommentList] = useState([]);
+
+  const nextCommentNo = useRef(1);
+  const commentInputSlot = useRef();
+  const commentInputButton = useRef();
 
   const commentInputChange = e => {
     setCommentInput(e.target.value);
   };
-
-  const nextCommentNo = useRef(1);
 
   const commentCreate = e => {
     e.preventDefault();
@@ -29,20 +31,20 @@ const KilFeed = () => {
       {
         commentNo: nextCommentNo.current,
         userId: 'ralo',
-        liked: false,
+        isLiked: false,
         contents: commentInput,
       },
     ]);
 
+    commentInputSlot.current.value = '';
     setCommentInput('');
-
     nextCommentNo.current += 1;
   };
 
   const commentLiked = commentNo => {
     const adjustedCommentList = commentList.map(comment =>
       comment.commentNo === commentNo
-        ? { ...comment, liked: !comment.liked }
+        ? { ...comment, isLiked: !comment.isLiked }
         : comment
     );
     setCommentList(adjustedCommentList);
@@ -144,9 +146,14 @@ const KilFeed = () => {
             name="commentInput"
             className="commentInput"
             placeholder="댓글 달기..."
+            ref={commentInputSlot}
             onChange={commentInputChange}
           />
-          <button className="commentInputButton" onClick={commentCreate}>
+          <button
+            className="commentInputButton"
+            ref={commentInputButton}
+            onClick={commentCreate}
+          >
             게시
           </button>
         </form>

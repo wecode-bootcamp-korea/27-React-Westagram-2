@@ -17,7 +17,7 @@ const Comment = ({ comment, commentLiked, commentRemove }) => {
       </label>
       <label>
         <button
-          className={'commentLikeButton ' + (comment.liked ? 'liked' : '')}
+          className={'commentLikeButton ' + (comment.isLiked ? 'liked' : '')}
           onClick={() => commentLiked(comment.commentNo)}
         >
           <FontAwesomeIcon icon={faHeart} />

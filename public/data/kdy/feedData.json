@@ -1,0 +1,16 @@
+[
+  {
+    "feedId": 0,
+    "userName": "ralo",
+    "content": "낭만이 있는 김해",
+    "isLiked": true,
+    "commentList": [
+      {
+        "commentNo": 0,
+        "userId": "ralo",
+        "isLiked": false,
+        "contents": "댓글"
+      }
+    ]
+  }
+]
