@@ -3,6 +3,7 @@ import Feeds from './Feeds';
 import Aside from './Aside';
 import './YangMain.scss';
 import Nav from '../../../components/Nav/Nav';
+import Comment from './components/Comment';
 
 const YangMain = () => {
   const [댓글, 댓글변경] = useState([]);
@@ -56,14 +57,15 @@ const YangMain = () => {
                   <li>너무 추워</li>
                 </ul>
                 <form className="feedForm">
-                  {댓글.map(function (글, idx) {
+                  {/* {댓글.map(function (글, idx) {
                     return (
                       <ul className="feedText">
                         <li className="idName">j00_00</li>
                         <li>{글}</li>
                       </ul>
                     );
-                  })}
+                  })} */}
+                  <Comment 댓글={댓글} 입력값={입력값} />
                   <div className="commentBox">
                     <input
                       className="comment"
