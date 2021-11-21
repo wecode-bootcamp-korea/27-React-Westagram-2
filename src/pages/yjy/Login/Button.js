@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Button.scss';
 
 const Button = () => {
@@ -12,10 +12,9 @@ const Button = () => {
         type="button"
         onClick={() => navigate('/YangMain')}
       >
-        {/* <Link className="link" to="/main"> */}
         로그인
-        {/* </Link> */}
       </button>
+      y
     </div>
   );
 };

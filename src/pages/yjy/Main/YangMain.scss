@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .main {
   display: flex;
   width: 100%;
@@ -15,6 +17,115 @@
     .feeds {
       width: 60%;
       margin-right: 28px;
+
+      .feedsBox {
+        margin-bottom: 24px;
+        background: #fff;
+        border: 1px solid #dbdbdb;
+
+        .feedsHead {
+          .feedsHeadLeft {
+            @include flexStart;
+            padding: 14px;
+
+            .userHead {
+              margin-right: 15px;
+              font-weight: bold;
+              border-radius: 50px;
+              width: 32px;
+              height: 32px;
+              background: #000;
+            }
+
+            .userHeadId {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .feedsImg {
+          img {
+            width: 100%;
+          }
+        }
+
+        .feedContent {
+          .img {
+            @include flexSpaceBetweenCenter;
+            margin: 8px 0;
+            padding: 0 16px;
+
+            > div {
+              > img {
+                width: 24px;
+                height: 24px;
+              }
+            }
+
+            .feedIcon {
+              > img {
+                margin-right: 6px;
+              }
+            }
+          }
+
+          .feedLikes {
+            margin-bottom: 8px;
+            padding: 0 16px;
+          }
+
+          .feedText {
+            display: flex;
+            margin-bottom: 8px;
+            padding: 0 16px;
+
+            .idName {
+              margin-right: 5px;
+              font-weight: bold;
+            }
+          }
+
+          .commentBox {
+            @include flexSpaceBetweenCenter;
+            padding: 0 16px;
+            background-color: #fff;
+
+            .comment {
+              width: 100%;
+              padding: 9px 0 7px 0;
+              border: none;
+              outline: none;
+              resize: none;
+            }
+
+            .commentBtn {
+              display: inline;
+              width: 30px;
+              background: #fff;
+              border: none;
+              font-size: 14px;
+            }
+          }
+
+          .commentSpace {
+            padding: 0 16px;
+
+            .commentLi {
+              @include flexSpaceBetweenCenter;
+              margin-bottom: 4px;
+
+              .commentText {
+                @include flexSpaceBetweenCenter;
+
+                .user {
+                  margin-right: 5px;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -3,7 +3,7 @@ import './Feeds.scss';
 
 function Feeds() {
   return (
-    <>
+    <div>
       <div className="feedsBox">
         <div className="feedsHead">
           <div className="feedsHeadLeft">
@@ -39,7 +39,7 @@ function Feeds() {
                 type="text"
                 placeholder="댓글달기..."
                 onChange={e => {
-                  console.log(e);
+                  console.log(e.target.value);
                 }}
               />
               <button className="commentBtn" type="submit">
@@ -49,7 +49,7 @@ function Feeds() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

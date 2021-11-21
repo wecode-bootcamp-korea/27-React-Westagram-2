@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Input.scss';
-import Button from './Button';
 
 function Input() {
   const [inputs, setInputs] = useState({

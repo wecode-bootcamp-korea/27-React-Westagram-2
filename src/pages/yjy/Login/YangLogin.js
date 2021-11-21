@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import './YangLogin.scss';
 import '../../../styles/reset.scss';
-import { Link, useNavigate } from 'react-router-dom';
-import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 const YangLogin = () => {
   const [inputs, setInputs] = useState({
     inputId: '',
     inputPwd: '',
   });
-  const [disabled, setDisabled] = useState(false); //비활성화되어있음.
+  const { inputId, inputPwd } = inputs;
 
-  const { inputId, inputPwd } = inputs; //비구조화 할당을 통해 값 추출
+  const [disabled, setDisabled] = useState(true); // 비활성화되어있음
+
+  //const inputId = inputs.inputId;
+  //const inputPwd = inputs.inputPwd;
 
   const onChange = e => {
-    const { value, name } = e.target; // 우선 e.target에서 name과 value를 추출
+    const { value, name } = e.target;
+    //const value = e.target.value;
+    //const name = e.target.name;
     setInputs({
-      ...inputs, // 기존의 input 객체를 복사한 뒤
-      [name]: value, // name 키를 가진 값을 value로 설정
+      ...inputs,
+      [name]: value,
     });
   };
 
@@ -27,10 +31,11 @@ const YangLogin = () => {
 
   const onClick = e => {
     if (isValid) {
-      setDisabled(true);
+      setDisabled(false);
       navigate('/YangMain');
     }
   };
+
   return (
     <div>
       <div className="login">
@@ -59,7 +64,6 @@ const YangLogin = () => {
               type="button"
               id="loginBtn"
               onClick={onClick}
-              disabled={disabled}
             >
               로그인
             </button>

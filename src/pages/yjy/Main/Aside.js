@@ -3,8 +3,8 @@ import './Aside.scss';
 
 const Aside = () => {
   return (
-    <>
-      <aside className="mainRight">
+    <div>
+      <div className="mainRight">
         <span>
           <div className="user"></div>
           <div className="userId">
@@ -103,8 +103,8 @@ const Aside = () => {
             </ul>
           </div>
         </div>
-      </aside>
-    </>
+      </div>
+    </div>
   );
 };
 

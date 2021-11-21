@@ -1,11 +1,8 @@
 @import '../../../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body {
   background: #fafafa;
-}
-
-h1 {
-  font-family: 'Lobster', cursive;
 }
 
 .login {
@@ -26,8 +23,9 @@ h1 {
       width: 175px;
       height: 51px;
       margin: 22px auto 12px;
-      font-size: 38px;
+      font-size: 37px;
       font-weight: bold;
+      font-family: 'Lobster', cursive;
     }
 
     form {
