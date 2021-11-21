@@ -15,12 +15,16 @@ const YangMain = () => {
 
   const addComment = e => {
     e.preventDefault();
-    let new댓글 = [...댓글];
-    new댓글.push(입력값);
-    댓글변경(new댓글);
-    입력값변경({
-      입력값: '',
-    });
+    if (입력값.length !== 0) {
+      let new댓글 = [...댓글];
+      new댓글.push(입력값);
+      댓글변경(new댓글);
+    } else {
+      alert('내용을 입력해주세요!');
+    }
+    // 입력값변경({
+    //   입력값: '',
+    // });
   };
 
   return (
@@ -74,7 +78,10 @@ const YangMain = () => {
                       onChange={getValue}
                     />
                     <button
-                      className="commentBtn"
+                      id="commentBtn"
+                      className={
+                        입력값.length !== 0 ? 'activeBtn' : 'unactiveBtn'
+                      }
                       type="submit"
                       onClick={addComment}
                     >

@@ -4,7 +4,6 @@
   display: flex;
   width: 100%;
   height: 100%;
-  margin-top: 40px;
   padding: 0 100px;
 
   .wrapper {
@@ -98,12 +97,20 @@
               resize: none;
             }
 
-            .commentBtn {
+            #commentBtn {
               display: inline;
               width: 30px;
               background: #fff;
               border: none;
               font-size: 14px;
+            }
+
+            .activeBtn {
+              color: #0095f6;
+            }
+
+            .unactiveBtn {
+              color: #c4e1fb;
             }
           }
 
