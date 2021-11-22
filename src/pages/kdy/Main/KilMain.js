@@ -16,7 +16,6 @@ const KilMain = () => {
 
   useEffect(() => {
     setIsLoading(true);
-
     dataFetch();
     setIsLoading(false);
   }, []);
@@ -27,13 +26,13 @@ const KilMain = () => {
 
   return (
     <div>
-      {!isLoading && (
+      {!isLoading && feedList.length > 0 && (
         <div>
           <Nav />
           <main>
             <section className="mainSection">
               <section className="feedsWrapper">
-                {feedList.length > 0 && <GenerateFeed />}
+                <GenerateFeed />
               </section>
               <KilAside />
             </section>

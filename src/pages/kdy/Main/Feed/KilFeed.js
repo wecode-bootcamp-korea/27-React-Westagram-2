@@ -23,7 +23,7 @@ const KilFeed = ({ feedprops }) => {
   useEffect(() => {
     setFeedData(feedprops);
     setCommentList(feedData.comments);
-  }, [feedprops, feedData, commentList]);
+  }, [feedprops, feedData]);
 
   const commentInputChange = e => {
     setCommentInput(e.target.value);
@@ -54,7 +54,6 @@ const KilFeed = ({ feedprops }) => {
         : comment
     );
     setCommentList(adjustedCommentList);
-    console.log(commentList);
   };
 
   const commentRemove = commentNo => {
@@ -89,10 +88,7 @@ const KilFeed = ({ feedprops }) => {
         </div>
       </div>
       <div className="feedImage">
-        <img
-          alt="feed-image"
-          src="images/kdy/olcay-ertem-m4R-7ZsENNE-unsplash.jpg"
-        />
+        <img alt="feed-image" src={feedData.imageContent} />
       </div>
       <div className="feedBody">
         <div className="buttonWrapper">
