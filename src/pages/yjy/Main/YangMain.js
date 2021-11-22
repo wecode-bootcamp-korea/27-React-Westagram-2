@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Feeds from './Feeds';
 import Aside from './Aside';
 import './YangMain.scss';
@@ -7,7 +7,9 @@ import Comment from './components/Comment';
 
 const YangMain = () => {
   const [댓글, 댓글변경] = useState([]);
-  const [입력값, 입력값변경] = useState([]);
+  const [입력값, 입력값변경] = useState('');
+
+  const nextId = useRef(4);
 
   const getValue = e => {
     입력값변경(e.target.value);
@@ -16,16 +18,37 @@ const YangMain = () => {
   const addComment = e => {
     e.preventDefault();
     if (입력값.length !== 0) {
-      let new댓글 = [...댓글];
-      new댓글.push(입력값);
-      댓글변경(new댓글);
+      // let new댓글 = [...댓글];
+      // new댓글.push(입력값); //[...댓글, [], [], []]
+      // 댓글변경(new댓글);
+      // // 입력값변경({
+      // //   입력값: '',
+      // // });
+      // console.log(댓글);
+
+      const new댓글 = {
+        id: nextId,
+        userName: 'joo',
+        content: 입력값,
+        isLiked: false,
+      };
+      댓글변경([...댓글, new댓글]);
+      nextId.current += 1;
+      // 입력값변경('');
     } else {
       alert('내용을 입력해주세요!');
     }
-    // 입력값변경({
-    //   입력값: '',
-    // });
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3001/data/yjy/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        댓글변경(data);
+      });
+  }, []);
 
   return (
     <div>

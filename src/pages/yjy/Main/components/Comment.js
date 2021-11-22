@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 const Comment = props => {
   return (
     <div>
-      {props.댓글.map(function (글, idx) {
+      {props.댓글.map(function (글) {
         return (
-          <ul className="feedText" key={idx}>
-            <li className="idName">j00_00</li>
-            <li>{글}</li>
+          <ul className="feedText">
+            <li className="idName">{글.userName}</li>
+            <li>{글.content}</li>
           </ul>
         );
       })}
