@@ -8,8 +8,6 @@ const KilLogin = () => {
 
   const loginButton = useRef();
 
-  const { userId, userPw } = userInfo;
-
   const handleUserInput = e => {
     const { name, value } = e.target;
     setUserInfo({
@@ -44,45 +42,43 @@ const KilLogin = () => {
   };
 
   return (
-    <>
-      <body>
-        <main className="loginMain">
-          <div className="loginWrapper">
-            <h1 className="h1back">westagram</h1>
-            <div className="formContainer">
-              <form id="login">
-                <div className="inputWrapper">
-                  <input
-                    name="userId"
-                    type="text"
-                    placeholder="아이디"
-                    id="id"
-                    onChange={handleUserInput}
-                  />
-                </div>
-                <div className="inputWrapper">
-                  <input
-                    name="userPw"
-                    type="password"
-                    placeholder="비밀번호"
-                    id="pw"
-                    onChange={handleUserInput}
-                  />
-                </div>
-                <div className="inputWrapper">
-                  <button id="loginButton" disabled ref={loginButton}>
-                    로그인
-                  </button>
-                </div>
-                <div className="inputWrapper pwRemind">
-                  <a href="">비밀번호를 잊으셨나요?</a>
-                </div>
-              </form>
-            </div>
+    <body>
+      <main className="loginMain">
+        <div className="loginWrapper">
+          <h1 className="h1back">westagram</h1>
+          <div className="formContainer">
+            <form id="login">
+              <div className="inputWrapper">
+                <input
+                  name="userId"
+                  type="text"
+                  placeholder="아이디"
+                  id="id"
+                  onChange={handleUserInput}
+                />
+              </div>
+              <div className="inputWrapper">
+                <input
+                  name="userPw"
+                  type="password"
+                  placeholder="비밀번호"
+                  id="pw"
+                  onChange={handleUserInput}
+                />
+              </div>
+              <div className="inputWrapper">
+                <button id="loginButton" disabled ref={loginButton}>
+                  로그인
+                </button>
+              </div>
+              <div className="inputWrapper pwRemind">
+                <a href="">비밀번호를 잊으셨나요?</a>
+              </div>
+            </form>
           </div>
-        </main>
-      </body>
-    </>
+        </div>
+      </main>
+    </body>
   );
 };
 

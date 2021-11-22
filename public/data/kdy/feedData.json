@@ -16,7 +16,7 @@
     ]
   },
   {
-    "feedId": 0,
+    "feedId": 1,
     "userId": "ralo",
     "imageContent": "images/kdy/olcay-ertem-m4R-7ZsENNE-unsplash.jpg",
     "contents": "낭만",
@@ -25,7 +25,7 @@
     "comments": [
       {
         "commentNo": 0,
-        "userId": "ralo",
+        "userId": "phenix_park",
         "isLiked": false,
         "contents": "dummy comment"
       }

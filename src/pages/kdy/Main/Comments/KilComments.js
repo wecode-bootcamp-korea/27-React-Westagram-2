@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Comment = ({ comment, commentLiked, commentRemove }) => {
   return (
-    <div className="comment">
+    <div className="comment" key={comment.commentNo}>
       <label>
         {' '}
         <a className="userName" href="#">

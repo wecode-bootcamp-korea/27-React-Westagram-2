@@ -21,7 +21,9 @@ const KilMain = () => {
   }, []);
 
   const GenerateFeed = () => {
-    return feedList.map(el => <KilFeed feedprops={el} key={el.feedId} />);
+    return feedList.map(el => (
+      <KilFeed feedprops={el} key={el.feedId} setFeedList={setFeedList} />
+    ));
   };
 
   return (

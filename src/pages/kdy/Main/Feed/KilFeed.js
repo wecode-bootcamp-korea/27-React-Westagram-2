@@ -11,18 +11,19 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Comments from '../Comments/KilComments';
 
-const KilFeed = ({ feedprops }) => {
+const KilFeed = ({ feedprops, feedId, setFeedList }) => {
   const [commentInput, setCommentInput] = useState('');
   const [commentList, setCommentList] = useState([]);
   const [feedData, setFeedData] = useState([]);
 
-  const nextCommentNo = useRef(1);
+  const nextCommentNo = useRef(feedData.commentNoIndex);
   const commentInputSlot = useRef();
   const commentInputButton = useRef();
 
   useEffect(() => {
     setFeedData(feedprops);
     setCommentList(feedData.comments);
+    nextCommentNo.current = feedprops.commentNoIndex;
   }, [feedprops, feedData]);
 
   const commentInputChange = e => {
@@ -64,7 +65,7 @@ const KilFeed = ({ feedprops }) => {
   };
 
   return (
-    <article id="feed-0" className="feed">
+    <article id="feed-0" className="feed" key={feedId}>
       <div className="feedHeader">
         <div className="feedWriter">
           <div className="smallProfileCircle">
@@ -93,7 +94,7 @@ const KilFeed = ({ feedprops }) => {
       <div className="feedBody">
         <div className="buttonWrapper">
           <div className="buttonContainer">
-            <button className="buttonLike" onclick="feedLikeToggle(this)">
+            <button className="buttonLike">
               <FontAwesomeIcon icon={faHeart} />
             </button>
             <button className="buttonComment">
