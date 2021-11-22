@@ -5,28 +5,42 @@ import KilFeed from './Feed/KilFeed';
 import KilAside from './Aside/KilAside';
 
 const KilMain = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [feedList, setFeedList] = useState([]);
 
+  const dataFetch = async () => {
+    const data = await fetch('/data/kdy/feedData.json');
+    const feeds = await data.json();
+    setFeedList(feeds);
+  };
+
   useEffect(() => {
-    fetch('http://localhost:3000/data/kdy/feedData.json')
-      .then(res => res.json())
-      .then(data => {
-        setFeedList(data);
-      });
-  }, [feedList]);
+    setIsLoading(true);
+
+    dataFetch();
+    setIsLoading(false);
+  }, []);
+
+  const GenerateFeed = () => {
+    return feedList.map(el => <KilFeed feedprops={el} key={el.feedId} />);
+  };
 
   return (
-    <>
-      <Nav />
-      <main>
-        <section className="mainSection">
-          <section className="feedsWrapper">
-            <KilFeed feedData={feedList[0]} />
-          </section>
-          <KilAside />
-        </section>
-      </main>
-    </>
+    <div>
+      {!isLoading && (
+        <div>
+          <Nav />
+          <main>
+            <section className="mainSection">
+              <section className="feedsWrapper">
+                {feedList.length > 0 && <GenerateFeed />}
+              </section>
+              <KilAside />
+            </section>
+          </main>
+        </div>
+      )}
+    </div>
   );
 };
 

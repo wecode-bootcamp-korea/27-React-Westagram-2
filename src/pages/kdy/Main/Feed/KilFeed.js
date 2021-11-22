@@ -11,13 +11,19 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Comments from '../Comments/KilComments';
 
-const KilFeed = ({ feedData }) => {
+const KilFeed = ({ feedprops }) => {
   const [commentInput, setCommentInput] = useState('');
   const [commentList, setCommentList] = useState([]);
+  const [feedData, setFeedData] = useState([]);
 
   const nextCommentNo = useRef(1);
   const commentInputSlot = useRef();
   const commentInputButton = useRef();
+
+  useEffect(() => {
+    setFeedData(feedprops);
+    setCommentList(feedData.comments);
+  }, [feedprops, feedData, commentList]);
 
   const commentInputChange = e => {
     setCommentInput(e.target.value);
@@ -71,7 +77,7 @@ const KilFeed = ({ feedData }) => {
           </div>
           <div className="writerInfo">
             <a className="userName" href="#">
-              ralo
+              {feedData.userId}
             </a>
             <a className="locationInfo" href="#">
               김해시
@@ -125,16 +131,18 @@ const KilFeed = ({ feedData }) => {
                 <label>
                   {' '}
                   <a className="userName" href="#">
-                    ralo
+                    {feedData.userId}
                   </a>
-                  &nbsp;<span>ㅇㅇ</span>{' '}
+                  &nbsp;<span>{feedData.contents}</span>{' '}
                 </label>
               </div>
-              <Comments
-                commentList={commentList}
-                commentRemove={commentRemove}
-                commentLiked={commentLiked}
-              />
+              {commentList && (
+                <Comments
+                  commentList={commentList}
+                  commentRemove={commentRemove}
+                  commentLiked={commentLiked}
+                />
+              )}
             </div>
             <div className="feedTimeAgo">
               <p>2시간 전</p>
