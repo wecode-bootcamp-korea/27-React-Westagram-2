@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, React } from 'react';
 import Nav from '../../../components/Nav/Nav.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,34 @@ import {
 import './KimMain.scss';
 
 const KimMain = () => {
+  const [comment, setComment] = useState({
+    newComment: '',
+    comments: [],
+  });
+
+  const { newComment, comments } = comment;
+
+  function getComment(e) {
+    setComment({ ...comment, newComment: e.target.value });
+  }
+
+  function addComment() {
+    if (!newComment) {
+      return;
+    }
+    setComment({
+      ...comment,
+      comments: comments.concat([newComment]),
+      newComment: '',
+    });
+  }
+
+  function addCommentEnter(e) {
+    if (e.key === 'Enter' && newComment) {
+      addComment();
+    }
+  }
+
   return (
     <>
       <Nav />
@@ -66,7 +94,7 @@ const KimMain = () => {
                   <ul className="commentBox">
                     <li className="commentItem">
                       <span className="boldBlackName">Sang_HoOon</span>
-                      <span className="comment">Lorem ipsum dolor </span>
+                      <span className="comment">hi wecode!!</span>
                       <button className="commentLikeBtn">
                         <FontAwesomeIcon icon={faHeart} />
                       </button>
@@ -74,6 +102,20 @@ const KimMain = () => {
                         <FontAwesomeIcon icon={faTrashAlt} />
                       </button>
                     </li>
+                    {comments.map((element, index) => {
+                      return (
+                        <li className="commentItem">
+                          <span className="boldBlackName">Sang_HoOon</span>
+                          <span className="comment">{element}</span>
+                          <button className="commentLikeBtn">
+                            <FontAwesomeIcon icon={faHeart} />
+                          </button>
+                          <button className="commentDel">
+                            <FontAwesomeIcon icon={faTrashAlt} />
+                          </button>
+                        </li>
+                      );
+                    })}
                   </ul>
                   <span className="smallGrayText">42분 전</span>
                 </div>
@@ -82,8 +124,13 @@ const KimMain = () => {
                     type="text"
                     className="commentInput"
                     placeholder="댓글 달기..."
+                    onChange={getComment}
+                    onKeyPress={addCommentEnter}
+                    value={newComment}
                   />
-                  <button className="submitBtn">게시</button>
+                  <button className="submitBtn" onClick={addComment}>
+                    게시
+                  </button>
                 </div>
               </article>
             </div>

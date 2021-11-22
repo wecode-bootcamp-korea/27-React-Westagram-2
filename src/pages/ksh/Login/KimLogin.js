@@ -19,16 +19,19 @@ const KimLogin = () => {
       ? setMemberInput({ ...memberInput, isActive: true })
       : setMemberInput({ ...memberInput, isActive: false });
   }
-  console.log(memberInput);
+
   return (
     <div className="Login">
       <p className="logo">Westagram</p>
-      <form className="loginForm" onKeyUp={activeBtn}>
+      <form
+        className="loginForm"
+        onKeyUp={activeBtn}
+        onChange={handleMemberInput}
+      >
         <input
           type="text"
           className="userId"
           placeholder="전화번호, 사용자 이름 또는 이메일"
-          onChange={handleMemberInput}
           name="id"
         />
         <br />
@@ -36,13 +39,13 @@ const KimLogin = () => {
           type="password"
           className="password"
           placeholder="비밀번호"
-          onChange={handleMemberInput}
           name="pwd"
         />
         <button
           className={
             'loginBtn ' + (memberInput.isActive ? 'active' : 'disabled')
           }
+          disabled={!memberInput.isActive}
         >
           로그인
         </button>

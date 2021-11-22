@@ -1,5 +1,9 @@
 @import '../../../styles/variables.scss';
 
+header {
+  z-index: 999;
+}
+
 .Main {
   .boldBlackName {
     font-weight: bold;
@@ -17,7 +21,6 @@
   main {
     position: relative;
     background-color: $verylightgray;
-    z-index: -1;
   }
 
   .mainWrap {
