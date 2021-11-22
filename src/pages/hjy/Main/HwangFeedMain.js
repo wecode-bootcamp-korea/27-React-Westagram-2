@@ -27,10 +27,7 @@ const HwangFeedMain = () => {
     copyArr.push(reviewContentsValue);
     setPostReviewContents(copyArr);
     setReviewContentsValue('');
-  };
-  //리뷰 인풋 리셋
-  const reset = () => {
-    setReviewContentsValue('');
+    setIsValied(false);
   };
   return (
     <section id="feedSection" className="section">
@@ -115,7 +112,11 @@ const HwangFeedMain = () => {
             );
           })}
         </div>
-        <form className="inputReviewContainer" method="POST">
+        <form
+          className="inputReviewContainer"
+          method="POST"
+          onSubmit={paintReview}
+        >
           <input
             value={reviewContentsValue}
             className="inputReview"
@@ -125,15 +126,13 @@ const HwangFeedMain = () => {
               setReviewContentsValue(event.target.value);
             }}
             onKeyUp={event => {
-              event.target.value.length > 0
+              event.target.value.length
                 ? setIsValied(true)
                 : setIsValied(false);
             }}
           />
           <button
-            className={
-              isValied === true ? 'reviewUploadBtnActive' : 'reviewUploadBtn'
-            }
+            className={isValied ? 'reviewUploadBtnActive' : 'reviewUploadBtn'}
             onClick={paintReview}
             disabled={isValied ? false : true}
           >

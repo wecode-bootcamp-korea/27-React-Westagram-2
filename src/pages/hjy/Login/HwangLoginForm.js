@@ -48,7 +48,7 @@ const HwangLoginForm = () => {
           type="submit"
           className={isActive ? 'activeBtn' : 'unActiveBtn'}
           onClick={goToMain}
-          disabled={email === '' || password === '' ? true : false}
+          disabled={!isActive}
           // disabled={!email || !password}
         >
           로그인
