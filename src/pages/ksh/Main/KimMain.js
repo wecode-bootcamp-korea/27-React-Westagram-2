@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 import './KimMain.scss';
+import Comment from '../Comment/Comment';
 
 const KimMain = () => {
   const [comment, setComment] = useState({
@@ -27,6 +28,7 @@ const KimMain = () => {
     if (!newComment) {
       return;
     }
+
     setComment({
       ...comment,
       comments: comments.concat([newComment]),
@@ -39,7 +41,6 @@ const KimMain = () => {
       addComment();
     }
   }
-
   return (
     <>
       <Nav />
@@ -102,19 +103,8 @@ const KimMain = () => {
                         <FontAwesomeIcon icon={faTrashAlt} />
                       </button>
                     </li>
-                    {comments.map((element, index) => {
-                      return (
-                        <li className="commentItem">
-                          <span className="boldBlackName">Sang_HoOon</span>
-                          <span className="comment">{element}</span>
-                          <button className="commentLikeBtn">
-                            <FontAwesomeIcon icon={faHeart} />
-                          </button>
-                          <button className="commentDel">
-                            <FontAwesomeIcon icon={faTrashAlt} />
-                          </button>
-                        </li>
-                      );
+                    {comments.map((el, index) => {
+                      return <Comment key={index} comments={el} />;
                     })}
                   </ul>
                   <span className="smallGrayText">42분 전</span>
