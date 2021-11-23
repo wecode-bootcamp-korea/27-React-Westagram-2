@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBookmark,
   faComment,
-  faEgg,
   faEllipsisH,
   faHeart,
   faPaperPlane,
@@ -14,12 +13,9 @@ import HwangReview from './HwangReview';
 import './HwangFeedMain.scss';
 
 const HwangFeedMain = () => {
-  //리뷰 id, 글 인풋 값
-  const [reviewIdValue, setReviewIdValue] = useState('Fix-Id');
+  const [reviewIdValue] = useState('Fix-Id');
   const [reviewContentsValue, setReviewContentsValue] = useState('');
-  //리뷰 콘텐츠 배열 저장소
   const [postReviewContents, setPostReviewContents] = useState([]);
-  //리뷰 유효성 검사
   const [isValied, setIsValied] = useState(false);
   const paintReview = e => {
     e.preventDefault();
@@ -121,6 +117,7 @@ const HwangFeedMain = () => {
             value={reviewContentsValue}
             className="inputReview"
             type="text"
+            name="review"
             placeholder="댓글달기..."
             onChange={event => {
               setReviewContentsValue(event.target.value);

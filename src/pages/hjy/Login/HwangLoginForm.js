@@ -3,19 +3,20 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import './HwangLoginForm.scss';
 const HwangLoginForm = () => {
-  //이메일, 비밀번호 확인
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const handleIdInput = event => {
-    setEmail(event.target.value);
+  const [inputValues, setInputValues] = useState({
+    email: '',
+    password: '',
+  });
+  const handleInput = event => {
+    const { name, value } = event.target;
+    setInputValues({
+      ...inputValues,
+      [name]: value,
+    });
   };
-  const handlePasswordInput = event => {
-    setPassword(event.target.value);
-  };
-  //유효성 검사
   const [isActive, setIsActive] = useState(false);
   const isPassedLogin = () => {
-    return email.includes('@') && password.length > 4
+    return inputValues.email.includes('@') && inputValues.password.length > 4
       ? setIsActive(true)
       : setIsActive(false);
   };
@@ -29,19 +30,21 @@ const HwangLoginForm = () => {
   return (
     <div className="boxWrap">
       <h1 className="logo">Westagram</h1>
-      <div className="loginWrap">
+      <form className="loginWrap">
         <input
-          onChange={handleIdInput}
           onKeyUp={isPassedLogin}
+          onChange={handleInput}
           className="idInput"
           type="text"
+          name="email"
           placeholder="전화번호, 사용자 이름 또는 이메일"
         />
         <input
-          onChange={handlePasswordInput}
           onKeyUp={isPassedLogin}
+          onChange={handleInput}
           className="password"
           type="password"
+          name="password"
           placeholder="비밀번호"
         />
         <button
@@ -49,11 +52,10 @@ const HwangLoginForm = () => {
           className={isActive ? 'activeBtn' : 'unActiveBtn'}
           onClick={goToMain}
           disabled={!isActive}
-          // disabled={!email || !password}
         >
           로그인
         </button>
-      </div>
+      </form>
       <p className="searchPassword">
         <Link to="/hwangmain">비밀번호를 잊으셨나요?</Link>
       </p>

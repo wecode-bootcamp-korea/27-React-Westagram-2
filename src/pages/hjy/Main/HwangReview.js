@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-
-const HwangReview = props => {
+import React from 'react';
+function HwangReview({ item, i }) {
   return (
     <div className="reviewList">
-      <span className="reviewId">{props.reviewIdValue}</span>
-      <span className="reviewContents">{props.item}</span>
+      <span className="reviewId">fix-id</span>
+      <span className="reviewContents">{item}</span>
     </div>
   );
-};
+}
 
 export default HwangReview;

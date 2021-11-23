@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './HwangAside.scss';
-
 const HwangAside = () => {
   return (
     <aside id="asideSection" className="section">
