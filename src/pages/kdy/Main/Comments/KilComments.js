@@ -1,13 +1,14 @@
 import React from 'react';
-import './KilComments.scss';
 
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import './KilComments.scss';
+
 const Comment = ({ comment, commentLiked, commentRemove }) => {
   return (
-    <div className="comment" key={comment.commentNo}>
+    <div className="comment">
       <label>
         {' '}
         <a className="userName" href="#">
@@ -33,8 +34,8 @@ const Comment = ({ comment, commentLiked, commentRemove }) => {
   );
 };
 
-const Comments = ({ commentList, commentLiked, commentRemove }) => {
-  const commentItems = commentList.map(el => (
+const Comments = ({ comments, commentLiked, commentRemove }) => {
+  const commentItems = comments.map(el => (
     <Comment
       comment={el}
       key={el.commentNo}

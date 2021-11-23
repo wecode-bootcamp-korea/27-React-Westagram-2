@@ -1,6 +1,4 @@
-import { React, useRef, useState, useEffect } from 'react';
-import './KilFeed.scss';
-
+import { React, useRef, useState } from 'react';
 import {
   faBookmark,
   faComment,
@@ -10,21 +8,17 @@ import {
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Comments from '../Comments/KilComments';
+import './KilFeed.scss';
 
-const KilFeed = ({ feedprops, feedId, setFeedList }) => {
+const KilFeed = ({ feedprops, changeFeed }) => {
   const [commentInput, setCommentInput] = useState('');
-  const [commentList, setCommentList] = useState([]);
-  const [feedData, setFeedData] = useState([]);
 
-  const nextCommentNo = useRef(feedData.commentNoIndex);
+  const { userId, imageContent, contents, commentNoIndex, comments } =
+    feedprops;
+
+  const nextCommentNo = useRef(commentNoIndex);
   const commentInputSlot = useRef();
   const commentInputButton = useRef();
-
-  useEffect(() => {
-    setFeedData(feedprops);
-    setCommentList(feedData.comments);
-    nextCommentNo.current = feedprops.commentNoIndex;
-  }, [feedprops, feedData]);
 
   const commentInputChange = e => {
     setCommentInput(e.target.value);
@@ -33,39 +27,49 @@ const KilFeed = ({ feedprops, feedId, setFeedList }) => {
   const commentCreate = e => {
     e.preventDefault();
 
-    setCommentList([
-      ...commentList,
-      {
-        commentNo: nextCommentNo.current,
-        userId: 'ralo',
-        isLiked: false,
-        contents: commentInput,
-      },
-    ]);
-
+    changeFeed({
+      ...feedprops,
+      commentNoIndex: nextCommentNo.current + 1,
+      comments: [
+        ...comments,
+        {
+          commentNo: nextCommentNo.current,
+          userId: 'ralo',
+          isLiked: false,
+          contents: commentInput,
+        },
+      ],
+    });
+    nextCommentNo.current += 1;
     commentInputSlot.current.value = '';
     setCommentInput('');
-    nextCommentNo.current += 1;
   };
 
   const commentLiked = commentNo => {
-    const adjustedCommentList = commentList.map(comment =>
+    const adjustedCommentList = comments.map(comment =>
       comment.commentNo === commentNo
         ? { ...comment, isLiked: !comment.isLiked }
         : comment
     );
-    setCommentList(adjustedCommentList);
+    changeFeed({
+      ...feedprops,
+      comments: adjustedCommentList,
+    });
   };
 
   const commentRemove = commentNo => {
-    const adjustedCommentList = commentList.filter(
+    const adjustedCommentList = comments.filter(
       comment => comment.commentNo !== commentNo
     );
-    setCommentList(adjustedCommentList);
+
+    changeFeed({
+      ...feedprops,
+      comments: adjustedCommentList,
+    });
   };
 
   return (
-    <article id="feed-0" className="feed" key={feedId}>
+    <article className="feed">
       <div className="feedHeader">
         <div className="feedWriter">
           <div className="smallProfileCircle">
@@ -77,7 +81,7 @@ const KilFeed = ({ feedprops, feedId, setFeedList }) => {
           </div>
           <div className="writerInfo">
             <a className="userName" href="#">
-              {feedData.userId}
+              {userId}
             </a>
             <a className="locationInfo" href="#">
               김해시
@@ -89,7 +93,7 @@ const KilFeed = ({ feedprops, feedId, setFeedList }) => {
         </div>
       </div>
       <div className="feedImage">
-        <img alt="feed-image" src={feedData.imageContent} />
+        <img alt="feed-image" src={imageContent} />
       </div>
       <div className="feedBody">
         <div className="buttonWrapper">
@@ -128,14 +132,14 @@ const KilFeed = ({ feedprops, feedId, setFeedList }) => {
                 <label>
                   {' '}
                   <a className="userName" href="#">
-                    {feedData.userId}
+                    {userId}
                   </a>
-                  &nbsp;<span>{feedData.contents}</span>{' '}
+                  &nbsp;<span>{contents}</span>{' '}
                 </label>
               </div>
-              {commentList && (
+              {comments && (
                 <Comments
-                  commentList={commentList}
+                  comments={comments}
                   commentRemove={commentRemove}
                   commentLiked={commentLiked}
                 />
