@@ -10,8 +10,11 @@ const KimLogin = () => {
     isActive: false,
   });
 
+  const { isActive } = memberInput;
+
   function handleMemberInput(e) {
-    setMemberInput({ ...memberInput, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setMemberInput({ ...memberInput, [name]: value });
   }
 
   function activeBtn() {
@@ -42,10 +45,8 @@ const KimLogin = () => {
           name="pwd"
         />
         <button
-          className={
-            'loginBtn ' + (memberInput.isActive ? 'active' : 'disabled')
-          }
-          disabled={!memberInput.isActive}
+          className={'loginBtn ' + (isActive ? 'active' : 'disabled')}
+          disabled={!isActive}
         >
           로그인
         </button>

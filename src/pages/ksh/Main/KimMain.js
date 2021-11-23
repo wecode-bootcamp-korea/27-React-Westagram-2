@@ -1,5 +1,4 @@
 import { useState, React } from 'react';
-import Nav from '../../../components/Nav/Nav.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -9,8 +8,10 @@ import {
   faHeart,
 } from '@fortawesome/free-regular-svg-icons';
 
-import './KimMain.scss';
+import Nav from '../../../components/Nav/Nav.js';
 import Comment from '../Comment/Comment';
+
+import './KimMain.scss';
 
 const KimMain = () => {
   const [comment, setComment] = useState({
@@ -21,7 +22,8 @@ const KimMain = () => {
   const { newComment, comments } = comment;
 
   function getComment(e) {
-    setComment({ ...comment, newComment: e.target.value });
+    const { value } = e.target;
+    setComment({ ...comment, newComment: value });
   }
 
   function addComment() {
@@ -41,6 +43,7 @@ const KimMain = () => {
       addComment();
     }
   }
+
   return (
     <>
       <Nav />
