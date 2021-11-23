@@ -1,4 +1,5 @@
 import { React, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   faBookmark,
   faComment,
@@ -80,12 +81,12 @@ const KilFeed = ({ feedprops, changeFeed }) => {
             />
           </div>
           <div className="writerInfo">
-            <a className="userName" href="#">
+            <Link className="userName" to="#">
               {userId}
-            </a>
-            <a className="locationInfo" href="#">
+            </Link>
+            <Link className="locationInfo" to="#">
               김해시
-            </a>
+            </Link>
           </div>
         </div>
         <div className="feedMenu">
@@ -93,7 +94,7 @@ const KilFeed = ({ feedprops, changeFeed }) => {
         </div>
       </div>
       <div className="feedImage">
-        <img alt="feed-image" src={imageContent} />
+        <img alt="feedcontent-img" src={imageContent} />
       </div>
       <div className="feedBody">
         <div className="buttonWrapper">
@@ -111,19 +112,18 @@ const KilFeed = ({ feedprops, changeFeed }) => {
           <div className="buttonContainer">
             <button className="buttonBookmark">
               <FontAwesomeIcon icon={faBookmark} />
-              <i className="far fa-bookmark"></i>
             </button>
           </div>
         </div>
         <div className="feedContent">
           <p>
-            <a className="userName" href="#">
+            <Link className="userName" to="#">
               paka9999
-            </a>
+            </Link>
             님 외{' '}
-            <a className="userName" href="#">
+            <Link className="userName" to="#">
               7명
-            </a>
+            </Link>
             이 좋아합니다
           </p>
           <div className="feedComments">
@@ -131,9 +131,9 @@ const KilFeed = ({ feedprops, changeFeed }) => {
               <div className="comment mainComment">
                 <label>
                   {' '}
-                  <a className="userName" href="#">
+                  <Link className="userName" to="#">
                     {userId}
-                  </a>
+                  </Link>
                   &nbsp;<span>{contents}</span>{' '}
                 </label>
               </div>

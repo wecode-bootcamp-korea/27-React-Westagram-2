@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FOOTER_LIST } from './footerList';
 import './KilAside.scss';
 
 const KilAside = () => {
@@ -15,9 +17,9 @@ const KilAside = () => {
           </div>
           <div className="userInfo">
             <label>
-              <a className="userId" href="#">
+              <Link className="userId" to="#">
                 ralo
-              </a>
+              </Link>
               <p className="userName">김찬호</p>
             </label>
           </div>
@@ -26,7 +28,7 @@ const KilAside = () => {
         <div className="recommendedPeople">
           <div className="recommendHeader">
             <h5>회원님을 위한 추천</h5>
-            <a href="#">모두 보기</a>
+            <Link to="#">모두보기</Link>
           </div>
           <ul className="recommendedPeopleList">
             <li>
@@ -36,9 +38,9 @@ const KilAside = () => {
                 src="images/kdy/paka.jpeg"
               />
               <label className="recommendedUserInfo">
-                <a className="userId" href="#">
+                <Link className="userId" to="#">
                   paka9999
-                </a>
+                </Link>
                 <p className="followInfo">회원님을 위한 추천</p>
               </label>
               <button className="followButton">팔로우</button>
@@ -50,9 +52,9 @@ const KilAside = () => {
                 src="images/kdy/paka.jpeg"
               />
               <label className="recommendedUserInfo">
-                <a className="userId" href="#">
+                <Link className="userId" to="#">
                   paka9999
-                </a>
+                </Link>
                 <p className="followInfo">회원님을 위한 추천</p>
               </label>
               <button className="followButton">팔로우</button>
@@ -64,9 +66,9 @@ const KilAside = () => {
                 src="images/kdy/paka.jpeg"
               />
               <label className="recommendedUserInfo">
-                <a className="userId" href="#">
+                <Link className="userId" to="#">
                   paka9999
-                </a>
+                </Link>
                 <p className="followInfo">회원님을 위한 추천</p>
               </label>
               <button className="followButton">팔로우</button>
@@ -78,9 +80,9 @@ const KilAside = () => {
                 src="images/kdy/paka.jpeg"
               />
               <label className="recommendedUserInfo">
-                <a className="userId" href="#">
+                <Link className="userId" to="#">
                   paka9999
-                </a>
+                </Link>
                 <p className="followInfo">회원님을 위한 추천</p>
               </label>
               <button className="followButton">팔로우</button>
@@ -89,42 +91,11 @@ const KilAside = () => {
         </div>
         <div className="corpEtc">
           <ul className="linkList">
-            <li>
-              <a href="#">소개</a>
-            </li>
-            <li>
-              <a href="#">도움말</a>
-            </li>
-            <li>
-              <a href="#">홍보</a>
-            </li>
-            <li>
-              <a href="#">센터</a>
-            </li>
-            <li>
-              <a href="#">API</a>
-            </li>
-            <li>
-              <a href="#">채용 정보</a>
-            </li>
-            <li>
-              <a href="#">개인정보처리방침</a>
-            </li>
-            <li>
-              <a href="#">약관</a>
-            </li>
-            <li>
-              <a href="#">위치</a>
-            </li>
-            <li>
-              <a href="#">인기 계정</a>
-            </li>
-            <li>
-              <a href="#">해시태그</a>
-            </li>
-            <li>
-              <a href="#">언어</a>
-            </li>
+            {FOOTER_LIST.map(list => (
+              <li key={list.id}>
+                <Link to="#">{list.item}</Link>
+              </li>
+            ))}
           </ul>
           <p>© 2021 WESTAGRAM</p>
         </div>

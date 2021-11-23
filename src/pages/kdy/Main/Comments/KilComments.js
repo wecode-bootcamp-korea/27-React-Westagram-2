@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -11,9 +12,9 @@ const Comment = ({ comment, commentLiked, commentRemove }) => {
     <div className="comment">
       <label>
         {' '}
-        <a className="userName" href="#">
+        <Link className="userName" to="#">
           {comment.userId}
-        </a>
+        </Link>
         &nbsp;<span>{comment.contents}</span>{' '}
       </label>
       <label>

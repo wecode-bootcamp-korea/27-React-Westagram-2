@@ -1,4 +1,5 @@
 import { React, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './KilLogin.scss';
 
 const KilLogin = () => {
@@ -72,7 +73,7 @@ const KilLogin = () => {
                 </button>
               </div>
               <div className="inputWrapper pwRemind">
-                <a href="">비밀번호를 잊으셨나요?</a>
+                <Link to="#">비밀번호를 잊으셨나요?</Link>
               </div>
             </form>
           </div>
