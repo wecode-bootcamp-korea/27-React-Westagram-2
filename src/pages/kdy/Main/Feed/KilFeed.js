@@ -19,10 +19,10 @@ const KilFeed = ({ feedprops, changeFeed }) => {
 
   const nextCommentNo = useRef(commentNoIndex);
   const commentInputSlot = useRef();
-  const commentInputButton = useRef();
 
   const commentInputChange = e => {
-    setCommentInput(e.target.value);
+    const { value } = e.target;
+    setCommentInput(value);
   };
 
   const commentCreate = e => {
@@ -160,8 +160,8 @@ const KilFeed = ({ feedprops, changeFeed }) => {
           />
           <button
             className="commentInputButton"
-            ref={commentInputButton}
             onClick={commentCreate}
+            disabled={commentInput.length > 0 ? false : true}
           >
             게시
           </button>
