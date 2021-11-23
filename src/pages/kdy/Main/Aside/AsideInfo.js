@@ -12,3 +12,26 @@ export const FOOTER_LIST = [
   { id: 10, item: '해시태그' },
   { id: 11, item: '언어' },
 ];
+
+export const RECOMMENDED_MEMBER = [
+  {
+    id: 0,
+    profileImg: 'images/kdy/paka.jpeg',
+    userId: 'paka9999',
+  },
+  {
+    id: 1,
+    profileImg: 'images/kdy/um.jpg',
+    userId: 'um_stil_alive',
+  },
+  {
+    id: 2,
+    profileImg: 'images/kdy/monsterrat.jpeg',
+    userId: 'monster_rat',
+  },
+  {
+    id: 3,
+    profileImg: 'images/kdy/paka.jpeg',
+    userId: 'paka9999',
+  },
+];

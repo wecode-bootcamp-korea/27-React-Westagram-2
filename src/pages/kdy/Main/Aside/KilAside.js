@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FOOTER_LIST } from './footerList';
+import { FOOTER_LIST, RECOMMENDED_MEMBER } from './AsideInfo';
 import './KilAside.scss';
+import RecommendedPeople from './RecommendedPeople';
 
 const KilAside = () => {
   return (
@@ -31,62 +32,9 @@ const KilAside = () => {
             <Link to="#">모두보기</Link>
           </div>
           <ul className="recommendedPeopleList">
-            <li>
-              <img
-                alt="recommed-profile1"
-                className="smallProfileImg recommendedProfileImg"
-                src="images/kdy/paka.jpeg"
-              />
-              <label className="recommendedUserInfo">
-                <Link className="userId" to="#">
-                  paka9999
-                </Link>
-                <p className="followInfo">회원님을 위한 추천</p>
-              </label>
-              <button className="followButton">팔로우</button>
-            </li>
-            <li>
-              <img
-                alt="recommed-profile1"
-                className="smallProfileImg recommendedProfileImg"
-                src="images/kdy/paka.jpeg"
-              />
-              <label className="recommendedUserInfo">
-                <Link className="userId" to="#">
-                  paka9999
-                </Link>
-                <p className="followInfo">회원님을 위한 추천</p>
-              </label>
-              <button className="followButton">팔로우</button>
-            </li>
-            <li>
-              <img
-                alt="recommed-profile1"
-                className="smallProfileImg recommendedProfileImg"
-                src="images/kdy/paka.jpeg"
-              />
-              <label className="recommendedUserInfo">
-                <Link className="userId" to="#">
-                  paka9999
-                </Link>
-                <p className="followInfo">회원님을 위한 추천</p>
-              </label>
-              <button className="followButton">팔로우</button>
-            </li>
-            <li>
-              <img
-                alt="recommed-profile1"
-                className="smallProfileImg recommendedProfileImg"
-                src="images/kdy/paka.jpeg"
-              />
-              <label className="recommendedUserInfo">
-                <Link className="userId" to="#">
-                  paka9999
-                </Link>
-                <p className="followInfo">회원님을 위한 추천</p>
-              </label>
-              <button className="followButton">팔로우</button>
-            </li>
+            {RECOMMENDED_MEMBER.map(member => (
+              <RecommendedPeople userInfo={member} key={member.id} />
+            ))}
           </ul>
         </div>
         <div className="corpEtc">
