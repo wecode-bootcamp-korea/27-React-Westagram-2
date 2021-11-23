@@ -1,40 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Feeds from './Feeds';
-import Aside from './Aside';
-import './YangMain.scss';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './components/Comment';
+import './YangMain.scss';
 
 const YangMain = () => {
-  const [댓글, 댓글변경] = useState([]);
-  const [입력값, 입력값변경] = useState('');
-
+  const [comments, setComments] = useState([]);
+  const [input, setInput] = useState('');
   const nextId = useRef(4);
-
   const getValue = e => {
-    입력값변경(e.target.value);
+    setInput(e.target.value);
   };
 
   const addComment = e => {
     e.preventDefault();
-    if (입력값.length !== 0) {
-      // let new댓글 = [...댓글];
-      // new댓글.push(입력값); //[...댓글, [], [], []]
-      // 댓글변경(new댓글);
-      // // 입력값변경({
-      // //   입력값: '',
-      // // });
-      // console.log(댓글);
-
-      const new댓글 = {
+    if (input.length !== 0) {
+      const newComment = {
         id: nextId,
         userName: 'joo',
-        content: 입력값,
+        content: input,
         isLiked: false,
       };
-      댓글변경([...댓글, new댓글]);
+      setComments([...comments, newComment]);
       nextId.current += 1;
-      // 입력값변경('');
+      setInput('');
     } else {
       alert('내용을 입력해주세요!');
     }
@@ -46,7 +34,7 @@ const YangMain = () => {
     })
       .then(res => res.json())
       .then(data => {
-        댓글변경(data);
+        setComments(data);
       });
   }, []);
 
@@ -84,15 +72,7 @@ const YangMain = () => {
                   <li>너무 추워</li>
                 </ul>
                 <form className="feedForm">
-                  {/* {댓글.map(function (글, idx) {
-                    return (
-                      <ul className="feedText">
-                        <li className="idName">j00_00</li>
-                        <li>{글}</li>
-                      </ul>
-                    );
-                  })} */}
-                  <Comment 댓글={댓글} 입력값={입력값} />
+                  <Comment comments={comments} input={input} />
                   <div className="commentBox">
                     <input
                       className="comment"
@@ -103,7 +83,9 @@ const YangMain = () => {
                     <button
                       id="commentBtn"
                       className={
-                        입력값.length !== 0 ? 'activeBtn' : 'unactiveBtn'
+                        input.length !== 0
+                          ? 'commentActivated'
+                          : 'commentDeactivated'
                       }
                       type="submit"
                       onClick={addComment}

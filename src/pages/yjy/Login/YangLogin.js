@@ -1,34 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './YangLogin.scss';
 import '../../../styles/reset.scss';
-import { useNavigate } from 'react-router-dom';
 
 const YangLogin = () => {
   const [inputs, setInputs] = useState({
     inputId: '',
     inputPwd: '',
   });
+  const [disabled, setDisabled] = useState(true);
+  const navigate = useNavigate();
   const { inputId, inputPwd } = inputs;
-
-  const [disabled, setDisabled] = useState(true); // 비활성화되어있음
-
-  //const inputId = inputs.inputId;
-  //const inputPwd = inputs.inputPwd;
-
   const onChange = e => {
     const { value, name } = e.target;
-    //const value = e.target.value;
-    //const name = e.target.name;
     setInputs({
       ...inputs,
       [name]: value,
     });
   };
-
-  const navigate = useNavigate();
-
   const isValid = inputId.includes('@' && '.') && inputPwd.length >= 5;
-
   const onClick = e => {
     if (isValid) {
       setDisabled(false);
@@ -60,7 +50,7 @@ const YangLogin = () => {
               />
             </div>
             <button
-              className={isValid ? 'activeBtn' : 'unactiveBtn'}
+              className={isValid ? 'activated' : 'deactivated'}
               type="button"
               id="loginBtn"
               onClick={onClick}
@@ -73,7 +63,7 @@ const YangLogin = () => {
             </div>
           </form>
           <div className="findWrapper">
-            <a href="">비밀번호를 잊으셨나요?</a>
+            <Link to="">비밀번호를 잊으셨나요?</Link>
           </div>
         </div>
       </div>
