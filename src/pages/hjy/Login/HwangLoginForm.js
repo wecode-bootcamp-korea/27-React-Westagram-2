@@ -7,6 +7,7 @@ const HwangLoginForm = () => {
     email: '',
     password: '',
   });
+  const { email, password } = inputValues;
   const handleInput = event => {
     const { name, value } = event.target;
     setInputValues({
@@ -16,11 +17,9 @@ const HwangLoginForm = () => {
   };
   const [isActive, setIsActive] = useState(false);
   const isPassedLogin = () => {
-    return inputValues.email.includes('@') && inputValues.password.length > 4
-      ? setIsActive(true)
-      : setIsActive(false);
+    const isLoginValid = email.includes('@') && password.length > 4;
+    return isLoginValid ? setIsActive(true) : setIsActive(false);
   };
-  //인증통과시 메인화면 이동
   const navigate = useNavigate();
   const goToMain = () => {
     isActive

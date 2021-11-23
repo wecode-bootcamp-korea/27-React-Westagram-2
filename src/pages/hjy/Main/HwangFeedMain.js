@@ -13,7 +13,7 @@ import HwangReview from './HwangReview';
 import './HwangFeedMain.scss';
 
 const HwangFeedMain = () => {
-  const [reviewIdValue] = useState('Fix-Id');
+  const [reviewIdValue, setReviewValue] = useState('Fix-Id');
   const [reviewContentsValue, setReviewContentsValue] = useState('');
   const [postReviewContents, setPostReviewContents] = useState([]);
   const [isValied, setIsValied] = useState(false);
@@ -129,9 +129,9 @@ const HwangFeedMain = () => {
             }}
           />
           <button
-            className={isValied ? 'reviewUploadBtnActive' : 'reviewUploadBtn'}
+            className={'loginsBtn ' + (isValied ? 'activedBtn ' : 'defaultBtn')}
             onClick={paintReview}
-            disabled={isValied ? false : true}
+            disabled={!isValied}
           >
             게시
           </button>

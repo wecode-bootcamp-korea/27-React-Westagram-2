@@ -112,22 +112,22 @@
 
   .inputReview {
     width: 100%;
-    border: none;
     padding: 10px 15px;
+    color: #333;
+    border: 1px solid #eee;
   }
-
-  .reviewUploadBtn {
+  .loginsBtn {
     position: absolute;
     right: 15px;
     top: 10px;
+    color: #fff;
+    background: #fff;
+  }
+  .defaultBtn {
     color: rgb(212, 228, 238);
-    background-color: #fff;
+    cursor: default;
   }
-  .reviewUploadBtnActive {
-    position: absolute;
-    right: 15px;
-    top: 10px;
+  .activedBtn {
     color: rgba(0, 149, 246, 1);
-    background-color: #fff;
   }
 }
