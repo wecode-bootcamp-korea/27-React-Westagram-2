@@ -5,6 +5,7 @@
   @include flexCenter;
   width: 935px;
   margin: 50px auto;
+
   #article {
     width: 100%;
     display: flex;
@@ -15,6 +16,7 @@
     width: 613px;
     border: 1px solid #ccc;
     @include theme;
+    margin-bottom: 20px;
   }
 }
 
@@ -67,13 +69,20 @@
     }
 
     .checkLikeSummary {
-      padding-left: 15px;
+      padding-left: 10px;
+      .sameLikeListId {
+        font-weight: bold;
+      }
     }
+  }
+
+  .writeId {
+    font-weight: bold;
+    padding-right: 10px;
   }
 }
 
 .reviewList {
-  position: relative;
   padding: 5px 0;
 
   .reviewId {
@@ -86,7 +95,6 @@
 }
 
 .inputReviewContainer {
-  position: relative;
   .minimalContents {
     width: 200px;
     height: 30px;

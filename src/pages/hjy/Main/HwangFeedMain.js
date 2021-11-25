@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,7 +12,7 @@ import {
 import HwangReview from './HwangReview';
 import './HwangFeedMain.scss';
 
-const HwangFeedMain = () => {
+const HwangFeedMain = ({ userName, content, feedImg, comment }) => {
   const [reviewIdValue, setReviewValue] = useState('Fix-Id');
   const [reviewContentsValue, setReviewContentsValue] = useState('');
   const [postReviewContents, setPostReviewContents] = useState([]);
@@ -25,13 +25,21 @@ const HwangFeedMain = () => {
     setReviewContentsValue('');
     setIsValied(false);
   };
+  useEffect(() => {
+    fetch('http://localhost:3000/data/hjy/comment/commentData.json')
+      .then(res => res.json())
+      .then(data => {
+        setPostReviewContents(data);
+      });
+  }, []);
+
   return (
     <section id="feedSection" className="section">
       <div className="feedUser">
         <div className="feedInfo">
           <span className="feedUserProfileImg">
             <Link to="#">
-              <img src="images/hjy/Main/webprofile1.png" alt="webprofile1" />
+              <img src="images/hjy/Main/webprofile1.png" alt="webprofile1" />s
             </Link>
           </span>
           <span className="feedUserProfileName">
@@ -50,7 +58,7 @@ const HwangFeedMain = () => {
       </div>
       <div className="feedContents">
         <div className="feedImg">
-          <img src="images/hjy/Main/feedimg.png" alt="feedImg" />
+          <img src={feedImg} alt="feedImg" />
         </div>
         <div className="interaction">
           <div className="reactionMenu">
@@ -86,25 +94,22 @@ const HwangFeedMain = () => {
               </Link>
             </span>
             <span className="checkLikeSummary">
-              <span className="sameLikeListId">dududweb</span>님 외
+              <span className="sameLikeListId">{userName}</span>님 외
               <span className="checkLikeCount">5</span>명이 좋아합니다.
             </span>
           </div>
           <div className="contents minimalContents">
-            <span className="writeId">
-              <b>dududweb</b>
-            </span>
-            <span className="writeContents">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </span>
+            <span className="writeId">{userName}</span>
+            <span className="writeContents">{content}</span>
           </div>
           <span className="moreBtn">더 보기</span>
-          {postReviewContents.map((item, i) => {
+          {comment.map(item => {
             return (
-              <HwangReview reviewIdValue={reviewIdValue} item={item} key={i} />
+              <HwangReview
+                key={item.id}
+                name={item.userName}
+                comment={item.content}
+              />
             );
           })}
         </div>

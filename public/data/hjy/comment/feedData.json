@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "feedImg": "images/hjy/Main/feedimg1.png",
+    "userName": "codeking",
+    "content": "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images!",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "feedImg": "images/hjy/Main/feedimg2.png",
+    "userName": "challie",
+    "content": "i'setFeed' is assigned a value but never used or an empty string for decorative images!",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "4",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "5",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "6",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "feedImg": "images/hjy/Main/feedimg3.png",
+    "userName": "gray",
+    "content": "asable-next-line to the line before.decorative images!",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "8",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "9",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "10",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  }
+]
