@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "userName": "wecode",
+    "content": "Welcome to world best coding bootcamp!",
+    "feedId": 0
+  },
+  {
+    "id": 1,
+    "userName": "joonsikyang",
+    "content": "Hi there.",
+    "feedId": 0
+  },
+  {
+    "id": 2,
+    "userName": "jayPark",
+    "content": "Hey.",
+    "feedId": 3
+  },
+  {
+    "id": 3,
+    "userName": "wecode",
+    "content": "수고하쎠얼매ㅑ덜",
+    "feedId": 3
+  },
+  {
+    "id": 4,
+    "userName": "eoemck125",
+    "content": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+    "feedId": 1
+  },
+  {
+    "id": 5,
+    "userName": "33_eo",
+    "content": "김상훈입니다!",
+    "feedId": 2
+  },
+  {
+    "id": 6,
+    "userName": "vvvv",
+    "content": "안녕하세요 ㅎㅎㅎㅎㅎㅎ",
+    "feedId": 0
+  },
+  {
+    "id": 8,
+    "userName": "00.00",
+    "content": "21312098345",
+    "feedId": 0
+  },
+  {
+    "id": 9,
+    "userName": "dxoxxxx",
+    "content": "Welcome to world best coding ",
+    "feedId": 1
+  }
+]

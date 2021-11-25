@@ -10,7 +10,7 @@ const KimLogin = () => {
     isActive: false,
   });
 
-  const { isActive } = memberInput;
+  const { id, pwd, isActive } = memberInput;
 
   function handleMemberInput(e) {
     const { name, value } = e.target;
@@ -21,6 +21,17 @@ const KimLogin = () => {
     memberInput.id.includes('@') && memberInput.pwd.length >= 5
       ? setMemberInput({ ...memberInput, isActive: true })
       : setMemberInput({ ...memberInput, isActive: false });
+  }
+
+  function handleLogin() {
+    fetch('http://10.58.0.32:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pwd,
+      }),
+    }).then(response => response.json());
+    // .then(message => console.log('결과: ', message));
   }
 
   return (
@@ -47,6 +58,8 @@ const KimLogin = () => {
         <button
           className={'loginBtn ' + (isActive ? 'active' : 'disabled')}
           disabled={!isActive}
+          onClick={handleLogin}
+          type="button"
         >
           로그인
         </button>

@@ -1,49 +1,21 @@
-import { useState, React } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisH, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import {
-  faBookmark,
-  faComment,
-  faPaperPlane,
-  faHeart,
-} from '@fortawesome/free-regular-svg-icons';
-
+import { useState, useEffect, React } from 'react';
 import Nav from '../../../components/Nav/Nav.js';
-import Comment from '../Comment/Comment';
+import Feed from '../Feed/Feed.js';
 
 import './KimMain.scss';
 
 const KimMain = () => {
-  const [comment, setComment] = useState({
-    newComment: '',
-    comments: [],
-  });
+  const [mockFeedList, setMockFeedList] = useState([]);
 
-  const { newComment, comments } = comment;
-
-  function getComment(e) {
-    const { value } = e.target;
-    setComment({ ...comment, newComment: value });
-  }
-
-  function addComment() {
-    if (!newComment) {
-      return;
-    }
-
-    setComment({
-      ...comment,
-      comments: comments.concat([newComment]),
-      newComment: '',
-    });
-  }
-
-  function addCommentEnter(e) {
-    if (e.key === 'Enter' && newComment) {
-      addComment();
-    }
-  }
-
+  useEffect(() => {
+    fetch('http://localhost:3000/data/ksh/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setMockFeedList(data);
+      });
+  }, []);
   return (
     <>
       <Nav />
@@ -51,81 +23,17 @@ const KimMain = () => {
         <main>
           <div className="mainWrap">
             <div className="feeds">
-              <article>
-                <div className="feedHeader">
-                  <div className="profile">
-                    <img src="/images/ksh/PumpkinCat.PNG" alt="" />
-                    <span>Sang_HoOon</span>
-                  </div>
-                  <div className="moreBtn">
-                    <FontAwesomeIcon icon={faEllipsisH} />
-                  </div>
-                </div>
-                <div className="feedImg">
-                  <img src="/images/ksh/img1.jpg" alt="" />
-                </div>
-                <div className="likesAndComments">
-                  <div className="icons">
-                    <ul>
-                      <li>
-                        <button className="likeBtn">
-                          <FontAwesomeIcon icon={faHeart} />
-                        </button>
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faComment} />
-                      </li>
-                      <li>
-                        <FontAwesomeIcon icon={faPaperPlane} />
-                      </li>
-                    </ul>
-                    <FontAwesomeIcon icon={faBookmark} />
-                  </div>
-                  <div className="likes">
-                    <img src="/images/ksh/PumpkinCat.PNG" alt="" />
-                    <span>
-                      <span className="boldBlackName">Sang_HoOon</span>님
-                      <span className="boldBlackName">외 10명</span>이
-                      좋아합니다
-                    </span>
-                  </div>
-                  <div className="mainText">
-                    <span className="boldBlackName">Sang_HoOon</span>
-                    <span className="content">
-                      adfsasdfasdfasdfasdLorem ipsum dolor
-                    </span>
-                  </div>
-                  <ul className="commentBox">
-                    <li className="commentItem">
-                      <span className="boldBlackName">Sang_HoOon</span>
-                      <span className="comment">hi wecode!!</span>
-                      <button className="commentLikeBtn">
-                        <FontAwesomeIcon icon={faHeart} />
-                      </button>
-                      <button className="commentDel">
-                        <FontAwesomeIcon icon={faTrashAlt} />
-                      </button>
-                    </li>
-                    {comments.map((el, index) => {
-                      return <Comment key={index} comments={el} />;
-                    })}
-                  </ul>
-                  <span className="smallGrayText">42분 전</span>
-                </div>
-                <div className="commentInputBox">
-                  <input
-                    type="text"
-                    className="commentInput"
-                    placeholder="댓글 달기..."
-                    onChange={getComment}
-                    onKeyPress={addCommentEnter}
-                    value={newComment}
+              {mockFeedList.map((el, key) => {
+                return (
+                  <Feed
+                    key={key}
+                    feedId={el.feedId}
+                    userName={el.userName}
+                    feedImg={el.feedImg}
+                    content={el.content}
                   />
-                  <button className="submitBtn" onClick={addComment}>
-                    게시
-                  </button>
-                </div>
-              </article>
+                );
+              })}
             </div>
             <div className="fixRight">
               <div className="mainRight">
