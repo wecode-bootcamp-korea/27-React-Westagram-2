@@ -1,37 +1,15 @@
-@mixin flexible {
-  display: flex;
-  justify-content: center;
-}
-
-header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-
-  width: 100%;
-}
-
-main {
-  @include flexible;
-  background-color: rgb(249, 249, 249);
-}
-
 .mainSection {
   display: flex;
   justify-content: center;
-
   padding-top: 30px;
 
   .feedsWrapper {
     display: flex;
     flex-direction: column;
-  }
 
-  @media screen and (min-width: 960px) {
-    .feedsWrapper {
+    @media screen and (min-width: 960px) {
       display: flex;
       flex-direction: column;
-
       margin-right: 28px;
     }
   }
@@ -79,7 +57,6 @@ main {
   font-weight: bold;
   color: #262626;
   font-size: 14px;
-
   margin-top: 4px;
   margin-bottom: 3px;
 }

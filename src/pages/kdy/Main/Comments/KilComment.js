@@ -5,9 +5,9 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import './KilComments.scss';
+import './KilComment.scss';
 
-const Comment = ({ comment, commentLiked, commentRemove }) => {
+const Comment = ({ comment, setCommentLiked, removeComment }) => {
   return (
     <div className="comment">
       <label>
@@ -20,13 +20,13 @@ const Comment = ({ comment, commentLiked, commentRemove }) => {
       <label>
         <button
           className={'commentLikeButton ' + (comment.isLiked ? 'liked' : '')}
-          onClick={() => commentLiked(comment.commentNo)}
+          onClick={() => setCommentLiked(comment.commentNo)}
         >
           <FontAwesomeIcon icon={faHeart} />
         </button>
         <button
           className="commentDeleteButton"
-          onClick={() => commentRemove(comment.commentNo)}
+          onClick={() => removeComment(comment.commentNo)}
         >
           <FontAwesomeIcon icon={faTrash} />
         </button>
@@ -35,17 +35,4 @@ const Comment = ({ comment, commentLiked, commentRemove }) => {
   );
 };
 
-const Comments = ({ comments, commentLiked, commentRemove }) => {
-  const commentItems = comments.map(el => (
-    <Comment
-      comment={el}
-      key={el.commentNo}
-      commentLiked={commentLiked}
-      commentRemove={commentRemove}
-    />
-  ));
-
-  return <div>{commentItems}</div>;
-};
-
-export default Comments;
+export default Comment;

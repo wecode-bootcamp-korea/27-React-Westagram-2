@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Comments from '../Comments/KilComments';
+import Comment from '../Comments/KilComment';
 import './KilFeed.scss';
 
 const KilFeed = ({ feedprops, changeFeed }) => {
@@ -18,14 +18,12 @@ const KilFeed = ({ feedprops, changeFeed }) => {
     feedprops;
 
   const nextCommentNo = useRef(commentNoIndex);
-  const commentInputSlot = useRef();
 
   const commentInputChange = e => {
-    const { value } = e.target;
-    setCommentInput(value);
+    setCommentInput(e.target.value);
   };
 
-  const commentCreate = e => {
+  const createComment = e => {
     e.preventDefault();
 
     changeFeed({
@@ -42,23 +40,22 @@ const KilFeed = ({ feedprops, changeFeed }) => {
       ],
     });
     nextCommentNo.current += 1;
-    commentInputSlot.current.value = '';
     setCommentInput('');
   };
 
-  const commentLiked = commentNo => {
-    const adjustedCommentList = comments.map(comment =>
+  const setCommentLiked = commentNo => {
+    const likedCommentList = comments.map(comment =>
       comment.commentNo === commentNo
         ? { ...comment, isLiked: !comment.isLiked }
         : comment
     );
     changeFeed({
       ...feedprops,
-      comments: adjustedCommentList,
+      comments: likedCommentList,
     });
   };
 
-  const commentRemove = commentNo => {
+  const removeComment = commentNo => {
     const adjustedCommentList = comments.filter(
       comment => comment.commentNo !== commentNo
     );
@@ -93,8 +90,8 @@ const KilFeed = ({ feedprops, changeFeed }) => {
           <FontAwesomeIcon icon={faEllipsisH} />
         </div>
       </div>
-      <div className="feedImage">
-        <img alt="feedcontent-img" src={imageContent} />
+      <div className="feedImageWrapper">
+        <img className="feedImg" alt="feedcontent-img" src={imageContent} />
       </div>
       <div className="feedBody">
         <div className="buttonWrapper">
@@ -137,13 +134,14 @@ const KilFeed = ({ feedprops, changeFeed }) => {
                   &nbsp;<span>{contents}</span>{' '}
                 </label>
               </div>
-              {comments && (
-                <Comments
-                  comments={comments}
-                  commentRemove={commentRemove}
-                  commentLiked={commentLiked}
+              {comments.map(el => (
+                <Comment
+                  comment={el}
+                  key={el.commentNo}
+                  removeComment={removeComment}
+                  setCommentLiked={setCommentLiked}
                 />
-              )}
+              ))}
             </div>
             <div className="feedTimeAgo">
               <p>2시간 전</p>
@@ -155,13 +153,13 @@ const KilFeed = ({ feedprops, changeFeed }) => {
             name="commentInput"
             className="commentInput"
             placeholder="댓글 달기..."
-            ref={commentInputSlot}
+            value={commentInput}
             onChange={commentInputChange}
           />
           <button
             className="commentInputButton"
-            onClick={commentCreate}
-            disabled={commentInput.length > 0 ? false : true}
+            onClick={createComment}
+            disabled={!commentInput}
           >
             게시
           </button>

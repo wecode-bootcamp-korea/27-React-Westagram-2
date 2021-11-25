@@ -8,7 +8,7 @@ const KilMain = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [feedList, setFeedList] = useState([]);
 
-  const dataFetch = async () => {
+  const fetchApiData = async () => {
     const data = await fetch('http://localhost:3000/data/kdy/feedData.json');
     const feeds = await data.json();
     setFeedList(feeds);
@@ -16,7 +16,7 @@ const KilMain = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    dataFetch();
+    fetchApiData();
     setIsLoading(false);
   }, []);
 
@@ -27,21 +27,21 @@ const KilMain = () => {
     setFeedList(newFeedList);
   };
 
-  const GenerateFeed = () => {
-    return feedList.map(el => (
-      <KilFeed feedprops={el} key={el.feedId} changeFeed={changeFeed} />
-    ));
-  };
-
   return (
     <div>
-      {!isLoading && feedList.length > 0 && (
+      {!isLoading && (
         <div>
           <Nav />
           <main>
             <section className="mainSection">
               <section className="feedsWrapper">
-                <GenerateFeed />
+                {feedList.map(el => (
+                  <KilFeed
+                    feedprops={el}
+                    key={el.feedId}
+                    changeFeed={changeFeed}
+                  />
+                ))}
               </section>
               <KilAside />
             </section>

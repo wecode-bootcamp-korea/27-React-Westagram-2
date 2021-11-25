@@ -5,7 +5,7 @@ import './RecommendedPeople.scss';
 const RecommendedPeople = ({ userInfo }) => {
   const { profileImg, userId } = userInfo;
   return (
-    <li className="recommendedMemeber">
+    <li className="recommendedMember">
       <img
         alt="recommed-profile1"
         className="smallProfileImg recommendedProfileImg"

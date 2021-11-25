@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FOOTER_LIST, RECOMMENDED_MEMBER } from './AsideInfo';
-import './KilAside.scss';
 import RecommendedPeople from './RecommendedPeople';
+import './KilAside.scss';
 
 const KilAside = () => {
   return (
@@ -28,8 +28,10 @@ const KilAside = () => {
         </div>
         <div className="recommendedPeople">
           <div className="recommendHeader">
-            <h5>회원님을 위한 추천</h5>
-            <Link to="#">모두보기</Link>
+            <h5 className="recommendExpression">회원님을 위한 추천</h5>
+            <Link className="showAll" to="#">
+              모두보기
+            </Link>
           </div>
           <ul className="recommendedPeopleList">
             {RECOMMENDED_MEMBER.map(member => (
@@ -37,11 +39,13 @@ const KilAside = () => {
             ))}
           </ul>
         </div>
-        <div className="corpEtc">
+        <div className="footers">
           <ul className="linkList">
             {FOOTER_LIST.map(list => (
-              <li key={list.id}>
-                <Link to="#">{list.item}</Link>
+              <li className="linkListChild" key={list.id}>
+                <Link className="linkListContent" to="#">
+                  {list.item}
+                </Link>
               </li>
             ))}
           </ul>

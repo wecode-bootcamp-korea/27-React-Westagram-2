@@ -1,34 +1,27 @@
 .comment {
   display: flex;
   justify-content: space-between;
-
   margin-top: 4px;
 
   .commentLikeButton {
     margin-left: 16px;
-
     border: none;
     background-color: transparent;
-
     font-size: 14px;
-  }
 
-  .commentLikeButton.liked {
-    margin-left: 16px;
-
-    border: none;
-    background-color: transparent;
-
-    font-size: 14px;
-    color: red;
+    &.liked {
+      margin-left: 16px;
+      border: none;
+      background-color: transparent;
+      font-size: 14px;
+      color: red;
+    }
   }
 
   .commentDeleteButton {
     margin-left: 16px;
-
     border: none;
     background-color: transparent;
-
     font-size: 14px;
   }
 }
