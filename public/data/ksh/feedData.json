@@ -1,0 +1,26 @@
+[
+  {
+    "feedId": 0,
+    "userName": "Sang_Ho0on",
+    "feedImg": "images/ksh/img1.jpg",
+    "content": "가가가가가가가가가가가가가"
+  },
+  {
+    "feedId": 1,
+    "userName": "dodododo",
+    "feedImg": "images/ksh/feed2.jpg",
+    "content": "나나나나나나나나나나나나나"
+  },
+  {
+    "feedId": 2,
+    "userName": "ekekejuocx",
+    "feedImg": "images/ksh/feed3.jpg",
+    "content": "다다다다다다다다다다다다"
+  },
+  {
+    "feedId": 3,
+    "userName": "soso23",
+    "feedImg": "images/ksh/rabbitCat.jpg",
+    "content": "라라라라라라라라라라라라라"
+  }
+]

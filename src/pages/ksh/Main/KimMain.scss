@@ -1,0 +1,284 @@
+@import '../../../styles/variables.scss';
+
+header {
+  z-index: 999;
+}
+
+.Main {
+  .boldBlackName {
+    font-weight: bold;
+    font-size: $small;
+  }
+
+  .smallGrayText {
+    color: $gray;
+    font-size: 12px;
+  }
+  button {
+    background-color: transparent;
+  }
+
+  main {
+    position: relative;
+    background-color: $verylightgray;
+  }
+
+  .mainWrap {
+    display: flex;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 30px;
+
+    .feeds {
+      max-width: 680px;
+      margin-right: 28px;
+
+      article {
+        background-color: white;
+        border: 1px solid $lightgray;
+        border-radius: 3px;
+        width: 100%;
+        margin-bottom: 30px;
+
+        .feedHeader {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+
+          .profile {
+            @include flexCenter;
+
+            span {
+              margin-left: 10px;
+              font-size: $small;
+              font-weight: bold;
+            }
+
+            img {
+              width: 30px;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .feedImg img {
+          width: 100%;
+        }
+
+        .likesAndComments {
+          display: flex;
+          flex-direction: column;
+          padding: 14px;
+          font-size: 14px;
+
+          .icons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 26px;
+
+            ul {
+              @include flexCenter;
+
+              li {
+                margin-right: 10px;
+              }
+
+              .likeBtn {
+                font-size: 26px;
+              }
+            }
+          }
+
+          .likes {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            img {
+              width: 20px;
+              margin-right: 6px;
+              border: 1px solid $lightgray;
+              border-radius: 50%;
+            }
+          }
+
+          .mainText {
+            margin-bottom: 5px;
+
+            .content {
+              padding-left: 5px;
+            }
+          }
+
+          .commentItem {
+            position: relative;
+            width: 100%;
+
+            .comment {
+              padding-left: 5px;
+            }
+
+            .commentLikeBtn {
+              position: absolute;
+              right: 20px;
+              opacity: 0;
+              font-size: 12px;
+            }
+
+            .commentDel {
+              position: absolute;
+              right: 0;
+              opacity: 0;
+              font-size: 12px;
+            }
+
+            &:hover > .commentDel {
+              opacity: 1;
+            }
+
+            &:hover > .commentLikeBtn {
+              opacity: 1;
+            }
+          }
+        }
+
+        .commentInputBox {
+          @include flexSpaceBetweenCenter;
+          padding: 14px;
+          border-top: 1px solid $lightgray;
+
+          input {
+            width: 95%;
+            outline: none;
+            border: none;
+            font-size: 14px;
+          }
+
+          .submitBtn {
+            width: 5%;
+            font-size: 14px;
+            color: $blue;
+          }
+        }
+      }
+    }
+
+    .mainRight {
+      position: fixed;
+      max-width: 320px;
+      width: 100%;
+
+      .rightProfileWrap {
+        @include flexSpaceBetweenCenter;
+        margin-bottom: 12px;
+
+        .rightProfile {
+          @include flexCenter;
+
+          img {
+            width: 50px;
+            border-radius: 50%;
+          }
+
+          span {
+            padding-left: 10px;
+          }
+        }
+
+        .blueText {
+          font-weight: bold;
+          font-size: 13px;
+          color: $blue;
+        }
+      }
+
+      .asideHead {
+        @include flexSpaceBetweenCenter;
+        margin-bottom: 10px;
+      }
+
+      .asideHead .asideH2 {
+        font-size: 14px;
+        color: $gray;
+      }
+
+      .storyBox {
+        height: 250px;
+        margin-bottom: 16px;
+        padding: 16px;
+        border: 1px solid $lightgray;
+        border-radius: 3px;
+        background-color: white;
+        overflow-y: scroll;
+
+        .storyImg {
+          @include flexCenter;
+          width: 41px;
+          height: 41px;
+          border-radius: 100%;
+          background: rgb(249, 252, 103);
+          background: linear-gradient(
+            32deg,
+            rgba(249, 252, 103, 1) 0%,
+            rgba(210, 63, 105, 1) 43%,
+            rgba(163, 25, 137, 1) 100%
+          );
+        }
+
+        .storyItem {
+          display: flex;
+          align-items: center;
+          margin-bottom: 6px;
+
+          .storyImg img {
+            width: 90%;
+            height: 90%;
+            border-radius: 100%;
+            border: 1px solid white;
+            box-sizing: border-box;
+          }
+
+          .nameAndTime {
+            padding-left: 10px;
+          }
+        }
+      }
+
+      .recommendBox {
+        height: 230px;
+        padding: 16px;
+        border: 1px solid $lightgray;
+        border-radius: 3px;
+        background-color: white;
+        overflow-y: scroll;
+
+        .recommendItem {
+          @include flexSpaceBetweenCenter;
+          margin-bottom: 8px;
+
+          .imgAndInfo {
+            @include flexCenter;
+
+            img {
+              width: 35px;
+              border-radius: 50%;
+            }
+
+            .nameAndRecommend {
+              padding-left: 10px;
+            }
+          }
+
+          .followBtn {
+            color: $blue;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
