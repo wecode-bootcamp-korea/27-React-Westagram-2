@@ -1,0 +1,116 @@
+.peopleSection {
+  width: 293px;
+  background-color: transparent;
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+
+  .peopleContainer {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 292px;
+
+    .userContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+      margin-top: 18px;
+
+      .userProfileImg {
+        margin-right: 12px;
+      }
+
+      .userInfo {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        width: 100%;
+
+        .userId {
+          font-size: 14px;
+          text-decoration-line: none;
+          font-weight: bold;
+          color: #262626;
+        }
+
+        .userName {
+          font-size: 14px;
+          color: #8e8e8e;
+        }
+      }
+
+      .userConversion {
+        width: 35px;
+        padding: 0;
+        margin-left: 6px;
+        border: none;
+        background-color: transparent;
+        font-size: 12px;
+        color: #0095f6;
+      }
+    }
+
+    .recommendedPeople {
+      display: flex;
+      flex-direction: column;
+
+      .recommendHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        margin: 12px 0 0;
+
+        .recommendExpression {
+          font-size: 14px;
+          color: #8e8e8e;
+          font-weight: bold;
+        }
+
+        .showAll {
+          font-size: 12px;
+          color: #262626;
+          text-decoration-line: none;
+        }
+      }
+
+      .recommendedPeopleList {
+        padding: 8px 0;
+      }
+    }
+
+    .footers {
+      display: flex;
+      flex-direction: column;
+      color: #c7c7c7;
+      font-size: 11px;
+      text-decoration: none;
+
+      .linkList {
+        padding-bottom: 16px;
+        list-style: none;
+
+        .linkListChild {
+          float: left;
+
+          .linkListContent {
+            color: #c7c7c7;
+            text-decoration: none;
+          }
+
+          &::after {
+            content: '•';
+          }
+
+          &:lastchild::after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}

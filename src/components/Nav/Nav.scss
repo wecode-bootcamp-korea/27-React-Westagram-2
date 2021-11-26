@@ -1,42 +1,36 @@
 $border-line: 1px solid #dbdbdb;
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-header {
+.topSideHeader {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-
   width: 100%;
 
-  nav {
+  .topSideNav {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-
     width: 100%;
     padding: 5px 50px;
 
     background-color: white;
     border-bottom: $border-line;
-
     z-index: 3;
 
-    h1 {
+    .h1Logo {
       margin-top: 3px;
       padding-left: 45px;
-
       font-family: 'Lobster', cursive;
       font-size: 25px;
     }
-    span {
+
+    .logoIcon {
       position: absolute;
-      top: 6px;
+      top: 2px;
       left: 0;
-
       padding-right: 10px;
-
       border-right: $border-line;
-
       font-size: 25px;
     }
 
@@ -46,26 +40,23 @@ header {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-
       max-width: 935px;
       margin: 4px auto;
 
-      .navInput {
+      .navInputContainer {
         position: relative;
-
         height: 100%;
 
-        input {
+        .navInput {
           padding: 5px;
           height: 100%;
-
           background-color: rgb(249, 249, 249);
           border: $border-line;
           border-radius: 4px;
-        }
 
-        input:focus ~ .navIcon {
-          display: none;
+          &:focus ~ .navIcon {
+            display: none;
+          }
         }
 
         input::-webkit-input-placeholder {
@@ -75,7 +66,7 @@ header {
         .navIcon {
           position: absolute;
           top: 6px;
-          left: 40px;
+          left: 30px;
 
           color: #dbdbdb;
         }
@@ -85,17 +76,15 @@ header {
     .navLogo {
       display: flex;
       justify-content: center;
-
       margin-top: -3px;
     }
 
     .menuIconWrapper {
       display: flex;
       justify-content: space-between;
-
       height: 100%;
 
-      img {
+      .navMenuIcon {
         width: 45px;
         padding-left: 22px;
       }

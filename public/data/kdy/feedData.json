@@ -1,0 +1,34 @@
+[
+  {
+    "feedId": 0,
+    "userId": "ralo",
+    "imageContent": "images/kdy/kimhae_airport.jpg",
+    "contents": "김해",
+    "isLiked": true,
+    "commentNoIndex": 1,
+    "comments": [
+      {
+        "commentNo": 0,
+        "userId": "ralo",
+        "isLiked": false,
+        "contents": "댓글"
+      }
+    ]
+  },
+  {
+    "feedId": 1,
+    "userId": "ralo",
+    "imageContent": "images/kdy/olcay-ertem-m4R-7ZsENNE-unsplash.jpg",
+    "contents": "낭만",
+    "isLiked": true,
+    "commentNoIndex": 1,
+    "comments": [
+      {
+        "commentNo": 0,
+        "userId": "phoenix_park",
+        "isLiked": false,
+        "contents": "dummy comment"
+      }
+    ]
+  }
+]

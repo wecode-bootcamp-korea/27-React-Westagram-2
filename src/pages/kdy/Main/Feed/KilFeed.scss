@@ -1,0 +1,141 @@
+.feed {
+  margin-bottom: 24px;
+  width: 616px;
+  background-color: white;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 1px;
+
+  .feedHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-height: 69px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+
+    .feedWriter {
+      display: flex;
+    }
+
+    .writerInfo {
+      margin-left: 10px;
+
+      .locationInfo {
+        display: block;
+        color: #262626;
+        text-decoration-line: none;
+        font-size: 12px;
+      }
+    }
+  }
+  .feedImageWrapper {
+    .feedImg {
+      width: 614px;
+      max-height: 614px;
+    }
+  }
+
+  .feedBody {
+    display: flex;
+    flex-direction: column;
+
+    .buttonWrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .buttonContainer {
+        display: flex;
+        margin: 10px;
+      }
+    }
+
+    .feedContent {
+      display: flex;
+      flex-direction: column;
+      padding: 0 16px;
+      font-size: 14px;
+
+      .userName {
+        display: inline;
+      }
+
+      .feedComments {
+        margin-top: 8px;
+
+        .comment {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 0px;
+        }
+      }
+
+      .feedTimeAgo {
+        margin-top: 5px;
+        margin-bottom: 16px;
+        font-size: 10px;
+        color: #8e8e8e;
+      }
+    }
+  }
+  .commentInputContainer {
+    display: flex;
+    height: 40px;
+    padding: 8px 16px;
+    border-top: 1px solid rgb(214, 214, 214);
+
+    .commentInput {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 25px;
+      resize: none;
+      border: none;
+      font-size: 14px;
+    }
+
+    .commentInputButton {
+      width: 30px;
+      padding: 0;
+      margin-left: 6px;
+      border: none;
+      background-color: transparent;
+      font-size: 14px;
+      color: #0095f6;
+    }
+
+    .commentInputButton:disabled {
+      border: none;
+      background-color: transparent;
+      color: #87c8f3;
+    }
+  }
+}
+
+.buttonLike {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+}
+
+.buttonLike.liked {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-size: 24px;
+}
+
+.buttonComment,
+.buttonShare,
+.buttonBookmark {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+}

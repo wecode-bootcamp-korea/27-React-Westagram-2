@@ -1,0 +1,76 @@
+@import '../../../styles/variables.scss';
+
+.loginMain {
+  @include flexible;
+  position: relative;
+  align-items: center;
+  height: 100%;
+}
+
+.loginWrapper {
+  @include flexible;
+  flex-direction: column;
+  align-items: center;
+  min-width: 350px;
+  background-color: #fff;
+  border: $borderLine;
+  border-radius: 1px;
+  padding: 10px 10px;
+
+  .h1Logo {
+    margin: 22px auto 28px;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+  }
+}
+
+.formContainer {
+  @include flexible;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.inputWrapper {
+  margin: 0 40px 6px;
+
+  .userInfoInput {
+    position: relative;
+    width: 250px;
+    padding: 10px 10px;
+    background-color: #fff;
+    border: $borderLine;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .loginButton {
+    position: relative;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 10px 10px;
+    margin-top: 20px;
+    background-color: $blue;
+    color: white;
+    font-size: 14px;
+
+    &:disabled {
+      background-color: $lightblue;
+    }
+  }
+
+  &.pwRemind,
+  &.signUp {
+    text-align: center;
+    margin-top: 30px;
+
+    .textButton {
+      position: relative;
+      width: 100%;
+      color: $blue;
+      text-decoration-line: none;
+      font-size: 14px;
+    }
+  }
+}
