@@ -1,0 +1,140 @@
+@import '../../../../styles/variables.scss';
+
+.main {
+  @include containerWidth;
+  @include flexCenter;
+  width: 935px;
+  margin: 50px auto;
+
+  .article {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .feedSection {
+    width: 613px;
+    border: 1px solid #ccc;
+    @include theme;
+    margin-bottom: 20px;
+
+    .feedUser {
+      @include flexSpaceBetweenCenter;
+      padding: 10px 15px;
+
+      .feedInfo {
+        @include flexCenter;
+
+        .feedUserProfileName {
+          padding-left: 10px;
+          font-size: 1.2em;
+        }
+
+        .feedUserProfileImg {
+          @include profileImgWidth;
+        }
+      }
+    }
+  }
+}
+
+.interaction {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  .likeBtn,
+  .reviewBtn,
+  .shareBtn,
+  .keepBtn {
+    @include iconReaction;
+  }
+}
+
+.reactionContentsWrap {
+  padding: 0 15px;
+
+  .checkLike {
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px;
+
+    .checkLikeIdProfile1 {
+      @include profileImgWidth($size: 20px);
+    }
+
+    .checkLikeIdProfile1 img {
+      height: 100%;
+    }
+
+    .checkLikeSummary {
+      padding-left: 10px;
+      .sameLikeListId {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .writeId {
+    font-weight: bold;
+    padding-right: 10px;
+  }
+}
+
+.reviewList {
+  padding: 5px 0;
+
+  .reviewId {
+    font-weight: bold;
+  }
+
+  .reviewContents {
+    padding-left: 5px;
+  }
+}
+
+.inputReviewContainer {
+  display: flex;
+  border: 1px solid #eee;
+  background: #fff;
+  .minimalContents {
+    width: 200px;
+    height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .moreBtn {
+    cursor: pointer;
+  }
+
+  .reviewLike {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .inputReviewContainer {
+    display: flex;
+    border-top: 1px solid #ccc;
+  }
+
+  .inputReview {
+    width: 90%;
+    padding: 15px 15px;
+    color: #333;
+    border: none;
+  }
+  .loginsBtn {
+    width: 10%;
+    color: #fff;
+    background: #fff;
+  }
+  .defaultBtn {
+    color: rgb(212, 228, 238);
+    cursor: default;
+  }
+  .activedBtn {
+    color: rgba(0, 149, 246, 1);
+  }
+}

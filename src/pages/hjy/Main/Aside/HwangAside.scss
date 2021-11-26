@@ -1,0 +1,73 @@
+@import '../../../../styles/variables.scss';
+
+.asideSection {
+  width: 290px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+
+  .profileImg {
+    @include profileImgWidth;
+  }
+
+  .profile .profileImg img {
+    height: 100%;
+  }
+
+  .profileDescription {
+    padding-left: 15px;
+  }
+}
+
+.storyFeed {
+  @include borderDefault;
+  margin: 20px 0;
+  height: 220px;
+  overflow: hidden;
+}
+
+.storyFeedRecommend {
+  @include borderDefault;
+  margin: 20px 0;
+  height: 190px;
+  overflow: hidden;
+}
+
+.storyWrap {
+  margin: 0 auto;
+  width: 85%;
+
+  .storyFeedHeadWrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .storyProfile {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .storyProfile .storyProfileImg {
+    @include profileImgWidth($size: 40px);
+  }
+
+  .storyProfile .storyProfileImg img {
+    height: 100%;
+  }
+
+  .storyProfileDescription {
+    padding-left: 15px;
+  }
+
+  .storySameFollowersView {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    width: 150px;
+  }
+}

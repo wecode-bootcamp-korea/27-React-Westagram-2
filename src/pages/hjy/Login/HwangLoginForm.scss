@@ -1,0 +1,49 @@
+@import '../../../styles/variables.scss';
+
+.hwangLoignWrap {
+  max-width: 350px;
+  @include borderDefault;
+  text-align: center;
+  margin: 100px auto;
+
+  .logo {
+    font-family: 'Lobster', cursive;
+    font-size: 28px;
+    padding: 20px 0;
+  }
+  .loginWrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+
+    .idInput,
+    .password {
+      height: 36px;
+      margin: 0 41px 6px;
+      padding: 14px 0 2px 8px;
+      border: 1px solid #eee;
+    }
+
+    .loginDefaultButton {
+      @include buttonDefault;
+      cursor: default;
+      color: #fff;
+    }
+
+    .unActiveButton {
+      background-color: #b2dffc;
+    }
+
+    .activeButton {
+      background: #0095f6;
+    }
+  }
+
+  .searchPassword {
+    margin: 100px 0 20px;
+  }
+
+  .searchPassword a {
+    color: rgba(0, 55, 107, 1);
+  }
+}
