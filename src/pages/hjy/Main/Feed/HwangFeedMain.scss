@@ -1,40 +1,38 @@
-@import '../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 
-#main {
+.main {
   @include containerWidth;
   @include flexCenter;
   width: 935px;
   margin: 50px auto;
 
-  #article {
+  .article {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
 
-  #feedSection {
+  .feedSection {
     width: 613px;
     border: 1px solid #ccc;
     @include theme;
     margin-bottom: 20px;
-  }
-}
 
-#feedSection {
-  .feedUser {
-    @include flexSpaceBetweenCenter;
-    padding: 10px 15px;
+    .feedUser {
+      @include flexSpaceBetweenCenter;
+      padding: 10px 15px;
 
-    .feedInfo {
-      @include flexCenter;
+      .feedInfo {
+        @include flexCenter;
 
-      .feedUserProfileName {
-        padding-left: 10px;
-        font-size: 1.2em;
-      }
+        .feedUserProfileName {
+          padding-left: 10px;
+          font-size: 1.2em;
+        }
 
-      .feedUserProfileImg {
-        @include profileImgWidth;
+        .feedUserProfileImg {
+          @include profileImgWidth;
+        }
       }
     }
   }
@@ -95,6 +93,9 @@
 }
 
 .inputReviewContainer {
+  display: flex;
+  border: 1px solid #eee;
+  background: #fff;
   .minimalContents {
     width: 200px;
     height: 30px;
@@ -114,20 +115,18 @@
   }
 
   .inputReviewContainer {
-    position: relative;
+    display: flex;
     border-top: 1px solid #ccc;
   }
 
   .inputReview {
-    width: 100%;
-    padding: 10px 15px;
+    width: 90%;
+    padding: 15px 15px;
     color: #333;
-    border: 1px solid #eee;
+    border: none;
   }
   .loginsBtn {
-    position: absolute;
-    right: 15px;
-    top: 10px;
+    width: 10%;
     color: #fff;
     background: #fff;
   }

@@ -1,54 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import '../../../styles/variables.scss';
 
-.boxWrap {
+.hwangLoignWrap {
   max-width: 350px;
   @include borderDefault;
   text-align: center;
   margin: 100px auto;
-}
-.logo {
-  font-family: 'Lobster', cursive;
-  font-size: 28px;
-  padding: 20px 0;
-}
-.loginWrap {
-  display: flex;
-  flex-direction: column;
-  margin-top: 24px;
-}
 
-.loginWrap input {
-  height: 36px;
-  margin: 0 41px 6px;
-  padding: 14px 0 2px 8px;
-  border: 1px solid #eee;
-}
+  .logo {
+    font-family: 'Lobster', cursive;
+    font-size: 28px;
+    padding: 20px 0;
+  }
+  .loginWrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
 
-.unActiveBtn {
-  @include buttonDefault;
-  background-color: #b2dffc;
-  cursor: default;
-  color: #fff;
-}
-.unactiveBtn a {
-  color: #fff;
-}
+    .idInput,
+    .password {
+      height: 36px;
+      margin: 0 41px 6px;
+      padding: 14px 0 2px 8px;
+      border: 1px solid #eee;
+    }
 
-.activeBtn {
-  @include buttonDefault;
-  background: #0095f6;
-  color: #fff;
-}
+    .loginDefaultButton {
+      @include buttonDefault;
+      cursor: default;
+      color: #fff;
+    }
 
-.activeBtn a {
-  color: #fff;
-}
+    .unActiveButton {
+      background-color: #b2dffc;
+    }
 
-.searchPassword {
-  margin: 100px 0 20px;
-}
+    .activeButton {
+      background: #0095f6;
+    }
+  }
 
-.searchPassword a {
-  color: rgba(0, 55, 107, 1);
+  .searchPassword {
+    margin: 100px 0 20px;
+  }
+
+  .searchPassword a {
+    color: rgba(0, 55, 107, 1);
+  }
 }

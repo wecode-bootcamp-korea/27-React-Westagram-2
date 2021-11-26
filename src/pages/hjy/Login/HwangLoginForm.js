@@ -1,38 +1,34 @@
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { API } from '../../../config';
 
 import './HwangLoginForm.scss';
+
 const HwangLoginForm = () => {
-  const [inputValues, setInputValues] = useState({
-    email: '',
-    password: '',
-  });
-  const { email, password } = inputValues;
-  const handleInput = event => {
-    const { name, value } = event.target;
-    setInputValues({
-      ...inputValues,
-      [name]: value,
-    });
-  };
-  const [isActive, setIsActive] = useState(false);
-  const isPassedLogin = () => {
-    const isLoginValid = email.includes('@') && password.length > 4;
-    return isLoginValid ? setIsActive(true) : setIsActive(false);
-  };
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const navigate = useNavigate();
-  // const goToMain = () => {
-  //   isActive
-  //     ? navigate('/hwangmain')
-  //     : alert('가입된 회원이 아닙니다. 회원가입을 먼저 해주세요.');
-  // };
+
+  const handleIdInput = event => {
+    setEmail(event.target.value);
+  };
+  const handlePasswordInput = event => {
+    setPassword(event.target.value);
+  };
+
+  const isLoginActiveButton = email.includes('@') && password.length > 4;
+  const isPassedLogin = () => {
+    return !isLoginActiveButton;
+  };
+
   const login = () => {
-    fetch('http://10.58.6.3:8000/users/signin', {
+    fetch(API.SIGN_IN, {
       method: 'POST',
       body: JSON.stringify({
-        email: inputValues.email,
-        password: inputValues.password,
+        email: email,
+        password: password,
         account: '011',
         name: '황주영',
         phone: '010',
@@ -47,30 +43,30 @@ const HwangLoginForm = () => {
   };
 
   return (
-    <div className="boxWrap">
+    <div className="hwangLoignWrap">
       <h1 className="logo">Westagram</h1>
-      <form className="loginWrap">
+      <form className="loginWrap" onKeyUp={isPassedLogin}>
         <input
-          onKeyUp={isPassedLogin}
-          onChange={handleInput}
           className="idInput"
           type="text"
           name="email"
           placeholder="전화번호, 사용자 이름 또는 이메일"
+          onChange={handleIdInput}
         />
         <input
-          onKeyUp={isPassedLogin}
-          onChange={handleInput}
           className="password"
           type="password"
           name="password"
           placeholder="비밀번호"
+          onChange={handlePasswordInput}
         />
         <button
           type="button"
-          className={isActive ? 'activeBtn' : 'unActiveBtn'}
+          className={`loginDefaultButton ${
+            isLoginActiveButton ? 'activeButton' : 'unActiveButton'
+          }`}
           onClick={login}
-          disabled={!isActive}
+          disabled={!isLoginActiveButton}
         >
           로그인
         </button>

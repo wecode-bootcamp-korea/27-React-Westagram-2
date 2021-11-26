@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 import Nav from '../../../components/Nav/Nav';
-import HwangAside from './HwangAside';
-import HwangFeedMain from './HwangFeedMain';
+import HwangAside from './Aside/HwangAside';
+import HwangFeedMain from './Feed/HwangFeedMain';
 
 const HwangMain = () => {
   const [feed, setFeed] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3000/data/hjy/comment/feedData.json')
+    fetch('/data/hjy/comment/feedData.json')
       .then(res => res.json())
       .then(data => {
         setFeed(data);
@@ -16,8 +16,8 @@ const HwangMain = () => {
   return (
     <>
       <Nav />
-      <main id="main">
-        <article id="article">
+      <main className="main">
+        <article className="article">
           <div className="sectionWrap">
             {feed.map(data => {
               return (
@@ -26,7 +26,7 @@ const HwangMain = () => {
                   userName={data.userName}
                   content={data.content}
                   feedImg={data.feedImg}
-                  comment={data.comment}
+                  comments={data.comments}
                 />
               );
             })}

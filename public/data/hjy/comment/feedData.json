@@ -4,7 +4,7 @@
     "feedImg": "images/hjy/Main/feedimg1.png",
     "userName": "codeking",
     "content": "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images!",
-    "comment": [
+    "comments": [
       {
         "id": 1,
         "userName": "wecode",
@@ -30,7 +30,7 @@
     "feedImg": "images/hjy/Main/feedimg2.png",
     "userName": "challie",
     "content": "i'setFeed' is assigned a value but never used or an empty string for decorative images!",
-    "comment": [
+    "comments": [
       {
         "id": 1,
         "userName": "4",
@@ -56,7 +56,7 @@
     "feedImg": "images/hjy/Main/feedimg3.png",
     "userName": "gray",
     "content": "asable-next-line to the line before.decorative images!",
-    "comment": [
+    "comments": [
       {
         "id": 1,
         "userName": "8",

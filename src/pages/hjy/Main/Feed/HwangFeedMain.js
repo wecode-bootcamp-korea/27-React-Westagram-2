@@ -7,26 +7,26 @@ import {
   faEllipsisH,
   faHeart,
   faPaperPlane,
+  faTruckMonster,
 } from '@fortawesome/free-solid-svg-icons';
 
 import HwangReview from './HwangReview';
 import './HwangFeedMain.scss';
 
-const HwangFeedMain = ({ userName, content, feedImg, comment }) => {
-  const [reviewIdValue, setReviewValue] = useState('Fix-Id');
+const HwangFeedMain = ({ userName, content, feedImg, comments }) => {
   const [reviewContentsValue, setReviewContentsValue] = useState('');
   const [postReviewContents, setPostReviewContents] = useState([]);
-  const [isValied, setIsValied] = useState(false);
+
   const paintReview = e => {
     e.preventDefault();
     const copyArr = [...postReviewContents];
     copyArr.push(reviewContentsValue);
     setPostReviewContents(copyArr);
     setReviewContentsValue('');
-    setIsValied(false);
   };
+
   useEffect(() => {
-    fetch('http://localhost:3000/data/hjy/comment/commentData.json')
+    fetch('/data/hjy/comment/commentData.json')
       .then(res => res.json())
       .then(data => {
         setPostReviewContents(data);
@@ -34,7 +34,7 @@ const HwangFeedMain = ({ userName, content, feedImg, comment }) => {
   }, []);
 
   return (
-    <section id="feedSection" className="section">
+    <section className="feedSection">
       <div className="feedUser">
         <div className="feedInfo">
           <span className="feedUserProfileImg">
@@ -90,7 +90,7 @@ const HwangFeedMain = ({ userName, content, feedImg, comment }) => {
           <div className="checkLike">
             <span className="checkLikeIdProfile1">
               <Link to="#">
-                <img src="images/hjy/Main/webprofile2.png" alt="" />
+                <img src="images/hjy/Main/webprofile2.png" alt="webprofile2" />
               </Link>
             </span>
             <span className="checkLikeSummary">
@@ -103,7 +103,7 @@ const HwangFeedMain = ({ userName, content, feedImg, comment }) => {
             <span className="writeContents">{content}</span>
           </div>
           <span className="moreBtn">더 보기</span>
-          {comment.map(item => {
+          {comments.map(item => {
             return (
               <HwangReview
                 key={item.id}
@@ -127,16 +127,13 @@ const HwangFeedMain = ({ userName, content, feedImg, comment }) => {
             onChange={event => {
               setReviewContentsValue(event.target.value);
             }}
-            onKeyUp={event => {
-              event.target.value.length
-                ? setIsValied(true)
-                : setIsValied(false);
-            }}
           />
           <button
-            className={'loginsBtn ' + (isValied ? 'activedBtn ' : 'defaultBtn')}
+            className={`loginsBtn ${
+              reviewContentsValue ? 'activedBtn ' : 'defaultBtn'
+            }`}
             onClick={paintReview}
-            disabled={!isValied}
+            disabled={!reviewContentsValue}
           >
             게시
           </button>
