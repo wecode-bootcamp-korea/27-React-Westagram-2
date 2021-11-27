@@ -1,0 +1,80 @@
+@import '../../../styles/variables.scss';
+
+.login {
+  @include flexCenter;
+  max-width: 935px;
+  margin: 30px auto;
+  padding-bottom: 32px;
+  background: #fafafa;
+
+  .wrapper {
+    min-width: 350px;
+    padding-bottom: 20px;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+
+    h1 {
+      width: 175px;
+      height: 51px;
+      margin: 22px auto 12px;
+      font-size: 37px;
+      font-weight: bold;
+      font-family: 'Lobster', cursive;
+    }
+
+    .loginForm {
+      margin: 24px 40px;
+
+      .inputId,
+      .inputPwd {
+        width: 100%;
+        margin-bottom: 6px;
+        padding: 9px 0 7px 10px;
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+        outline: none;
+
+        &:placeholder {
+          color: #9d9d9d;
+          font-size: 13px;
+        }
+      }
+
+      .loginButton {
+        width: 100%;
+        height: 30px;
+        margin: 10px 0 0 0;
+        padding: 0;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 15px;
+
+        &.activated {
+          background: #0095f6;
+        }
+
+        &.deactivated {
+          background: #c4e1fb;
+        }
+
+        .link {
+          display: block;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .findWrapper {
+      padding-top: 50px;
+      text-align: center;
+
+      a {
+        color: #335b85;
+      }
+    }
+  }
+}
