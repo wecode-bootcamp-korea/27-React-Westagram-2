@@ -1,7 +1,23 @@
 [
   {
     "id": 1,
+    "src": "https://cherryiscute.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2021-08-22+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+7.56.01.png",
+    "userName": "cherriggung",
+    "liked": 2021,
+    "comment": "체리꿍은 너무 귀여워.."
+  },
+  {
+    "id": 2,
     "src": "https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1667&q=80",
-    "userName": "cherriggung"
+    "userName": "cherrison",
+    "liked": 509,
+    "comment": "뷰리풀~"
+  },
+  {
+    "id": 3,
+    "src": "https://images.unsplash.com/photo-1595038194664-40869d15bab7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80",
+    "userName": "jooyyyyyoung",
+    "liked": 21,
+    "comment": "🦦"
   }
 ]

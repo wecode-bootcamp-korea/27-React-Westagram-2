@@ -13,123 +13,213 @@
     margin: 0 auto 50px;
     padding-top: 50px;
 
-    .feeds {
-      width: 60%;
-      margin-right: 28px;
+    .feedWrap {
+      width: 70%;
 
-      .feedsBox {
-        margin-bottom: 24px;
+      .feeds {
+        margin-right: 28px;
+
+        .feedsBox {
+          margin-bottom: 24px;
+          background: #fff;
+          border: 1px solid #dbdbdb;
+
+          .feedsHead {
+            .feedsHeadLeft {
+              @include flexStart;
+              padding: 14px;
+
+              .userHead {
+                margin-right: 15px;
+                font-weight: bold;
+                border-radius: 50px;
+                width: 32px;
+                height: 32px;
+                background: #000;
+              }
+
+              .userHeadId {
+                font-weight: bold;
+              }
+            }
+          }
+
+          .feedsImg {
+            img {
+              width: 100%;
+            }
+          }
+
+          .feedContent {
+            .img {
+              @include flexSpaceBetweenCenter;
+              margin: 8px 0;
+              padding: 0 16px;
+
+              > div {
+                > img {
+                  width: 24px;
+                  height: 24px;
+                }
+              }
+
+              .feedIcon {
+                > img {
+                  margin-right: 6px;
+                }
+              }
+            }
+
+            .feedLikes {
+              margin-bottom: 8px;
+              padding: 0 16px;
+            }
+
+            .feedText {
+              display: flex;
+              margin-bottom: 8px;
+              padding: 0 16px;
+
+              .idName {
+                margin-right: 5px;
+                font-weight: bold;
+              }
+            }
+
+            .commentBox {
+              @include flexSpaceBetweenCenter;
+              padding: 8px 16px;
+              background-color: #fff;
+              border-top: 1px solid #dbdbdb;
+
+              .comment {
+                width: 100%;
+                padding: 9px 0 7px 0;
+                border: none;
+                font-size: 14px;
+                outline: none;
+                resize: none;
+              }
+
+              #commentBtn {
+                display: inline;
+                width: 30px;
+                background: #fff;
+                border: none;
+                font-size: 14px;
+              }
+
+              .commentActivated {
+                color: #0095f6;
+              }
+
+              .commentDeactivated {
+                color: #c4e1fb;
+              }
+            }
+
+            .commentSpace {
+              padding: 0 16px;
+
+              .commentLi {
+                @include flexSpaceBetweenCenter;
+                margin-bottom: 4px;
+
+                .commentText {
+                  @include flexSpaceBetweenCenter;
+
+                  .user {
+                    margin-right: 5px;
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mainRight {
+      width: 30%;
+
+      > span {
+        @include flexStart;
+        width: 100%;
+        margin-top: 8px;
+
+        .user {
+          width: 56px;
+          height: 56px;
+          margin-right: 15px;
+          background: #000;
+          border-radius: 50px;
+        }
+
+        .userId {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+
+      > div {
+        margin-top: 20px;
         background: #fff;
         border: 1px solid #dbdbdb;
+      }
 
-        .feedsHead {
-          .feedsHeadLeft {
-            @include flexStart;
-            padding: 14px;
+      .feedStory {
+        height: 300px;
+        padding: 14px;
 
-            .userHead {
-              margin-right: 15px;
-              font-weight: bold;
-              border-radius: 50px;
-              width: 32px;
-              height: 32px;
-              background: #000;
-            }
+        .feedStoryHead {
+          @include flexSpaceBetweenCenter;
+          font-size: 14px;
 
-            .userHeadId {
-              font-weight: bold;
-            }
+          .story {
+            color: #8e8e8e;
           }
         }
 
-        .feedsImg {
-          img {
-            width: 100%;
+        .feedStoryCon {
+          margin-top: 14px;
+
+          ul {
+            overflow-y: auto;
+
+            li {
+              display: flex;
+              margin-bottom: 15px;
+
+              .feedStoryConUser {
+                width: 32px;
+                height: 32px;
+                margin-right: 13px;
+                background: #000;
+                border-radius: 50px;
+              }
+            }
           }
         }
+      }
 
-        .feedContent {
-          .img {
-            @include flexSpaceBetweenCenter;
-            margin: 8px 0;
-            padding: 0 16px;
+      .recommend {
+        height: 200px;
 
-            > div {
-              > img {
-                width: 24px;
-                height: 24px;
-              }
-            }
-
-            .feedIcon {
-              > img {
-                margin-right: 6px;
-              }
-            }
-          }
-
-          .feedLikes {
-            margin-bottom: 8px;
-            padding: 0 16px;
-          }
-
-          .feedText {
-            display: flex;
-            margin-bottom: 8px;
-            padding: 0 16px;
-
-            .idName {
-              margin-right: 5px;
-              font-weight: bold;
-            }
-          }
-
-          .commentBox {
-            @include flexSpaceBetweenCenter;
-            padding: 8px 16px;
-            background-color: #fff;
-            border-top: 1px solid #dbdbdb;
-
-            .comment {
-              width: 100%;
-              padding: 9px 0 7px 0;
-              border: none;
-              font-size: 14px;
-              outline: none;
-              resize: none;
-            }
-
-            #commentBtn {
-              display: inline;
-              width: 30px;
-              background: #fff;
-              border: none;
-              font-size: 14px;
-            }
-
-            .commentActivated {
-              color: #0095f6;
-            }
-
-            .commentDeactivated {
-              color: #c4e1fb;
-            }
-          }
-
-          .commentSpace {
-            padding: 0 16px;
-
-            .commentLi {
+        .feedStoryCon {
+          ul {
+            li {
               @include flexSpaceBetweenCenter;
-              margin-bottom: 4px;
+              margin-bottom: 15px;
 
-              .commentText {
-                @include flexSpaceBetweenCenter;
+              .feedStoryUserInfo {
+                @include flexStart;
+              }
 
-                .user {
-                  margin-right: 5px;
-                  font-weight: bold;
-                }
+              .follow {
+                color: #0095f6;
+                font-size: 14px;
               }
             }
           }

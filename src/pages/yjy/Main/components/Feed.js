@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Feed(props) {
-  const { Comment, comments, input, getValue, addComment } = props;
+const Feed = props => {
+  const { Comment, comments, input, getValue, addComment, feeds } = props;
   return (
-    <div>
+    <div className="feedWrap">
       {props.feeds.map(function (feed) {
         return (
-          <div className="feeds">
+          <div className="feeds" key={feed.id}>
             <div className="feedsBox">
               <div className="feedsHead">
                 <div className="feedsHeadLeft">
@@ -16,7 +16,7 @@ function Feed(props) {
                 <div className="feedsHeadRight"></div>
               </div>
               <div className="feedsImg">
-                <img src="/images/yjy/cherry.png" alt="feedImg" />
+                <img src={feed.src} alt="feedImg" />
               </div>
               <div className="feedContent">
                 <div className="img">
@@ -29,10 +29,10 @@ function Feed(props) {
                     <img src="/images/yjy/bookmark.png" alt="bookmark" />
                   </div>
                 </div>
-                <div className="feedLikes">좋아요 188개</div>
+                <div className="feedLikes">좋아요 {feed.liked}개</div>
                 <ul className="feedText">
-                  <li className="idName">j00_00</li>
-                  <li>너무 추워</li>
+                  <li className="idName">{feed.userName}</li>
+                  <li>{feed.comment}</li>
                 </ul>
                 <form className="feedForm">
                   <Comment comments={comments} input={input} />
@@ -62,6 +62,6 @@ function Feed(props) {
       })}
     </div>
   );
-}
+};
 
 export default Feed;
