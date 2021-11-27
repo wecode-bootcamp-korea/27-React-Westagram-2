@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
+
 import Nav from '../../../components/Nav/Nav';
 import Comment from './components/Comment';
+
 import './YangMain.scss';
+import Feed from './components/Feed';
 
 const YangMain = () => {
   const [comments, setComments] = useState([]);
   const [input, setInput] = useState('');
+  const [feeds, setFeeds] = useState([]);
   const nextId = useRef(4);
+
   const getValue = e => {
     setInput(e.target.value);
   };
@@ -29,7 +34,7 @@ const YangMain = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3001/data/yjy/commentData.json', {
+    fetch('http://localhost:3000/data/yjy/commentData.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -38,12 +43,29 @@ const YangMain = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetch('http://localhost:3000/data/yjy/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setFeeds(data);
+      });
+  });
+
   return (
     <div>
       <Nav />
       <div className="main">
         <div className="wrapper">
-          <div className="feeds">
+          <Feed
+            Comment={Comment}
+            comments={comments}
+            input={input}
+            getValue={getValue}
+            addComment={addComment}
+          />
+          {/* <div className="feeds">
             <div className="feedsBox">
               <div className="feedsHead">
                 <div className="feedsHeadLeft">
@@ -53,17 +75,17 @@ const YangMain = () => {
                 <div className="feedsHeadRight"></div>
               </div>
               <div className="feedsImg">
-                <img src="/images/yjy/cherry.png" alt="" />
+                <img src="/images/yjy/cherry.png" alt="feedImg" />
               </div>
               <div className="feedContent">
                 <div className="img">
                   <div className="feedIcon">
-                    <img src="/images/yjy/likes.png" alt="" />
-                    <img src="/images/yjy/heart33.png" alt="" />
-                    <img src="/images/yjy/share.png" alt="" />
+                    <img src="/images/yjy/likes.png" alt="like" />
+                    <img src="/images/yjy/heart33.png" alt="comment" />
+                    <img src="/images/yjy/share.png" alt="share" />
                   </div>
                   <div>
-                    <img src="/images/yjy/bookmark.png" alt="" />
+                    <img src="/images/yjy/bookmark.png" alt="bookmark" />
                   </div>
                 </div>
                 <div className="feedLikes">좋아요 188개</div>
@@ -83,9 +105,7 @@ const YangMain = () => {
                     <button
                       id="commentBtn"
                       className={
-                        input.length !== 0
-                          ? 'commentActivated'
-                          : 'commentDeactivated'
+                        false ? 'commentActivated' : 'commentDeactivated'
                       }
                       type="submit"
                       onClick={addComment}
@@ -96,12 +116,14 @@ const YangMain = () => {
                 </form>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="mainRight">
             <span>
               <div className="user"></div>
               <div className="userId">
-                <a href="">wecode_bootcamp</a>
+                <a href="https://wecode.co.kr/?gclid=Cj0KCQiAhf2MBhDNARIsAKXU5GRdXoiikhCt9HkD6xoo4RxInPHcw87BP0Eny3GmzBjuLpDQy-S-AtYaAnKkEALw_wcB">
+                  wecode_bootcamp
+                </a>
                 <span>WeCode | 위코드</span>
               </div>
             </span>
